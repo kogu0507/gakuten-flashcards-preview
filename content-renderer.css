@@ -196,3 +196,4 @@
 
 /* Longer seventh names retain equal typography inside the same fixed face. */
 .seventh-quality-face .chord-quality-table td { font-size: .875rem; }
+.seventh-quality-face abbr { text-decoration: none; }

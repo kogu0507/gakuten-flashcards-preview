@@ -236,6 +236,13 @@ function createChordQuality(block) {
     const row=document.createElement('tr');
     const th=textElement('th',label);th.setAttribute('scope','row');th.setAttribute('lang',lang);
     const td=textElement('td',key==='de'?'':term[key],'chord-quality-'+key);td.setAttribute('lang',lang);
+    if(key==='en'&&block.type==='seventh-quality') {
+      // Compact display only; the canonical name and accessible expansion stay whole.
+      const index=term.en.indexOf('seventh');
+      const ordinal=textElement('abbr','7th');ordinal.setAttribute('title','seventh');
+      td.textContent='';td.setAttribute('aria-label',term.en);
+      td.append(textElement('span',term.en.slice(0,index)),ordinal,textElement('span',term.en.slice(index+7)));
+    }
     if(key==='de'){
       if(block.type==='seventh-quality')term.de.split(' ').forEach((word,index)=>{
         if(index)td.append(textElement('span',' '));
