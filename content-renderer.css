@@ -193,3 +193,6 @@
 .chord-quality-table tbody tr + tr { border-top: 1px solid #e3e6eb; }
 .chord-symbol-value { font-size: clamp(2rem, 8vw, 2.5rem); line-height: 1.4; font-weight: 500; }
 .key-tonic { white-space: nowrap; }
+
+/* Longer seventh names retain equal typography inside the same fixed face. */
+.seventh-quality-face .chord-quality-table td { font-size: .875rem; }

@@ -10,3 +10,6 @@
 .noto-music-symbol { font-family: 'Noto Music', system-ui, sans-serif; }
 sup.noto-music-symbol.sharp, sup.noto-music-symbol.flat { font-size: 100%; line-height: 0; }
 .chord-code-suffix { font-size: 70%; vertical-align: .5em; line-height: 0; }
+/* Site suffix alteration rules, separate from root-note superscripts. */
+.chord-code-suffix .chord-suffix-sharp { font-size: 110%; vertical-align: .2em; }
+.chord-code-suffix .chord-suffix-flat { font-size: 110%; vertical-align: 0; }

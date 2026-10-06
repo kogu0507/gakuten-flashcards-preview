@@ -1,6 +1,8 @@
 import { exact, safeText, validateDegreePairs } from './interval-foundations.js';
 import { triadName, triadCodeName, triadCodeParts } from './chord-terminology.js';
 import { naturalTriadTargets } from './triad-natural-roots-meta.js';
+import {seventhPilotTargets} from './seventh-chord-meta.js';
+import {seventhName,seventhCodeName,seventhCodeParts} from './seventh-chord-terminology.js';
 import { relatedKeyDiagram, relatedKeyName, relatedKeyQuestion } from './key-relationships.js';
 import { melodicDisplayCrops } from "./scale-notation-crops.js";
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -227,14 +229,20 @@ function createIntervalName(block) {
 }
 
 function createChordQuality(block) {
-  const term=triadName(block.quality),face=textElement('div','','chord-quality-face');
+  const term=block.type==='seventh-quality'?seventhName(block.quality):triadName(block.quality),face=textElement('div','','chord-quality-face'+(block.type==='seventh-quality'?' seventh-quality-face':''));
   const table=textElement('table','','chord-quality-table');table.setAttribute('aria-label','和音の種類、日本語・英語・ドイツ語');
   const body=document.createElement('tbody');
   for(const [key,label,lang] of [['jp','日本語','ja'],['en','English','en'],['de','Deutsch','de']]) {
     const row=document.createElement('tr');
     const th=textElement('th',label);th.setAttribute('scope','row');th.setAttribute('lang',lang);
     const td=textElement('td',key==='de'?'':term[key],'chord-quality-'+key);td.setAttribute('lang',lang);
-    if(key==='de')td.append(germanRuby(term));
+    if(key==='de'){
+      if(block.type==='seventh-quality')term.de.split(' ').forEach((word,index)=>{
+        if(index)td.append(textElement('span',' '));
+        td.append(germanRuby({de:word,reading:term.readingWords[index]}));
+      });
+      else td.append(germanRuby(term));
+    }
     row.append(th,td);body.append(row);
   }
   table.append(body);face.append(table);return face;
@@ -247,6 +255,18 @@ function createChordSymbol(block) {
   value.append(textElement('span',parts.root,'chord-code-root'));
   if(parts.suffix)value.append(textElement('span',parts.suffix,'chord-code-suffix'));
   face.setAttribute('aria-label','コードネーム');face.append(value);return face;
+}
+
+function createSeventhSymbol(block) {
+  const face=textElement('div','','chord-symbol-face'),value=textElement('div','','chord-symbol-value');
+  const parts=seventhCodeParts(block.root,block.quality);
+  value.setAttribute('lang','en');value.setAttribute('aria-label',seventhCodeName(block.root,block.quality));
+  value.append(textElement('span',parts.root,'chord-code-root'));
+  const suffix=textElement('span',parts.suffix,'chord-code-suffix');
+  if(parts.fifth){
+    suffix.append(textElement('span','('),textElement('span',parts.fifth==='flat'?'♭':'♯',`noto-music-symbol chord-suffix-${parts.fifth}`),textElement('span','5)'));
+  }
+  value.append(suffix);face.setAttribute('aria-label','コードネーム');face.append(value);return face;
 }
 
 function createKeyContent(block) {
@@ -283,6 +303,21 @@ export function normalizeCardContent(content, fallbackText = "") {
       const question=boundedString(block.question,'triad question',32);
       if (/[<>\u0000-\u001f\u007f]/u.test(question)) throw new TypeError('Invalid triad question');
       return {type:'triad-notation',assetId:block.assetId,question};
+    }
+    if(block.type==='seventh-notation'){
+      exactFields(block,['type','assetId','question']);
+      if(typeof block.assetId!=='string'||!seventhPilotTargets.some(t=>t.assetId===block.assetId))throw new TypeError('Unknown prepared seventh asset');
+      const question=boundedString(block.question,'seventh question',32);
+      if(/[<>\u0000-\u001f\u007f]/u.test(question))throw new TypeError('Invalid seventh question');
+      return {type:block.type,assetId:block.assetId,question};
+    }
+    if(block.type==='seventh-quality'){
+      exactFields(block,['type','quality']);seventhName(block.quality);
+      return {type:block.type,quality:block.quality};
+    }
+    if(block.type==='seventh-symbol'){
+      exactFields(block,['type','quality','root']);seventhCodeName(block.root,block.quality);
+      return {type:block.type,quality:block.quality,root:block.root};
     }
     if(block.type==='chord-quality') {
       exactFields(block,['type','quality']);triadName(block.quality);
@@ -390,15 +425,17 @@ export function renderCardContent(container, content, fallbackText = "") {
     }
     if (block.type === "scale-notation") { container.append(createScaleNotation(block)); continue; }
     if (block.type === "interval-name") { container.append(createIntervalName(block)); continue; }
-    if (block.type === 'triad-notation') {
+    if (block.type === 'triad-notation' || block.type==='seventh-notation') {
       const face=textElement('div','','triad-notation');
       const question=textElement('div',block.question,'triad-question');
       const keyword='コードネーム',index=block.question.indexOf(keyword);
       if(index>=0) question.replaceChildren(textElement('span',block.question.slice(0,index)),textElement('span',keyword,'triad-question-keyword'),textElement('span',block.question.slice(index+keyword.length)));
-      face.append(question,createImageElement({src:`./assets/notation/triads/${block.assetId}.svg`,alt:'高音部譜表の同時に鳴る3音'},'triad-notation-image'));
+      const seventh=block.type==='seventh-notation';
+      face.append(question,createImageElement({src:`./assets/notation/${seventh?'sevenths':'triads'}/${block.assetId}.svg`,alt:`高音部譜表の同時に鳴る${seventh?'4':'3'}音`},'triad-notation-image'));
       container.append(face); continue;
     }
-    if(block.type==='chord-quality') {container.append(createChordQuality(block));continue;}
+    if(block.type==='chord-quality'||block.type==='seventh-quality') {container.append(createChordQuality(block));continue;}
+    if(block.type==='seventh-symbol') {container.append(createSeventhSymbol(block));continue;}
     if(block.type==='chord-symbol') {container.append(createChordSymbol(block));continue;}
     if (block.type === 'chord-name') {
       const face=textElement('div','','chord-name chord-answer-sections');

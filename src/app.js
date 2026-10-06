@@ -615,7 +615,7 @@ function populateShelf() {
     description.textContent = meta.description;
     body.append(description);
 
-    const collectionPresets = presetsForCollection(meta.id).filter(preset => preset.shelfVisible !== false);
+    const collectionPresets = presetsForCollection(meta.id).filter(preset => preset.shelfVisible !== false && (!preset.shelfCollectionId || preset.shelfCollectionId===meta.id));
     if (meta.id === "scale-writing") {
       renderScalePicker(body);
     } else if (keyCollectionIds.includes(meta.id)) {

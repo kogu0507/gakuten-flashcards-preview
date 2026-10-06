@@ -3,7 +3,7 @@ export const shelfGroups = [
   { id: 'intervals', title: '音程', collectionIds: ['interval-foundations', 'natural-note-intervals', 'interval-inversions'] },
   { id: 'keys', title: '調・調号', collectionIds: ['key-signature-images', 'key-signature-writing', 'key-relationships'] },
   { id: 'scales', title: '音階', collectionIds: ['scale-writing'] },
-  { id:'chords',title:'和音',collectionIds:['triad-identification'] }
+  { id:'chords',title:'和音',collectionIds:['triad-identification','seventh-chord-identification'] }
 ];
 
 export function buildShelfSections(collections, groups = shelfGroups) {

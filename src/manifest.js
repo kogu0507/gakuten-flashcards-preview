@@ -1,5 +1,6 @@
 import { foundationCardIds } from './interval-foundations-meta.js';
 import { allNaturalTriadCardIds } from './triad-natural-roots-meta.js';
+import {allSeventhPilotCardIds} from './seventh-chord-meta.js';
 import { relatedKeyCardIds } from './key-relationships-meta.js';
 import { imageToKeyIds, keyToImageIds } from "./key-signature-meta.js";
 import { naturalIntervalCardIds } from "./natural-note-interval-meta.js";
@@ -53,7 +54,8 @@ export const collectionManifest = [
   { id: "scale-writing", title: "音階を書く", description: "全15調の長音階・短音階を紙に書いて、正解の譜例で確認します。旋律的短音階は上行形と下行形を書きます。", cardCount: 180, modulePath: "./collections/scale-writing.js", cardIds: scaleCardIds },
   { id: "key-relationships", title: "近親調", description: "長調15調・短調15調を主調とし、属調・下属調・平行調・同主調を表で確認します。短調の属調・下属調は自然短調の関係です。", cardCount: 30, modulePath: "./collections/key-relationships.js", cardIds: relatedKeyCardIds },
   { id: 'interval-foundations', title: '音程の基礎用語', description: '音程の基本用語を穴埋めで思い出す32枚。答え・短い解説・英語の読みで確認します。基本概念を短い解説で確認します。', cardCount: 32, modulePath: './collections/interval-foundations.js', cardIds: foundationCardIds },
-  {id:'triad-identification',title:'三和音（基本形）',description:'根音が幹音の28譜例。種類28枚とコード28枚は別問題で、同じSVGを共有します。七の和音は未収録。',cardCount:56,modulePath:'./collections/triad-identification.js',cardIds:allNaturalTriadCardIds}
+  {id:'triad-identification',title:'三和音（基本形）',description:'根音が幹音の28譜例。種類28枚とコード28枚は別問題で、同じSVGを共有します。',cardCount:56,modulePath:'./collections/triad-identification.js',cardIds:allNaturalTriadCardIds},
+  {id:'seventh-chord-identification',title:'七の和音（根音C・試作）',description:'根音Cの6譜例。種類6枚とコード6枚は別問題で、同じSVGを共有します。他根音は未収録です。',cardCount:12,modulePath:'./collections/seventh-chord-identification.js',cardIds:allSeventhPilotCardIds}
 ];
 
 const collectionMap = new Map(collectionManifest.map((item) => [item.id, item]));
