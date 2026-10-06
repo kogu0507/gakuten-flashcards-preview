@@ -177,7 +177,7 @@ function germanRuby(row) {
 
 // A single item and a major/minor pair share language order and typography.
 // Only validated names enter this renderer-owned table; no layout field in data.
-function createLanguageNameTable(rows, classPrefix) {
+function createLanguageNameTable(rows, classPrefix, raisedTonic = false) {
   const table = document.createElement('table');
   table.className = 'multilingual-name-table language-rows ' + (rows.length === 1 ? 'single-name' : 'paired-names key-names-table');
   table.setAttribute('aria-label', rows.length === 1 ? '日本語・英語・ドイツ語の名称' : '長調・短調の調名、日本語・英語・ドイツ語');
@@ -202,6 +202,14 @@ function createLanguageNameTable(rows, classPrefix) {
     rows.forEach(row => {
       const cell = textElement('td', key === 'de' ? '' : row[key], `name-term name-term-${key} ${classPrefix}-${key}`);
       cell.setAttribute('lang', lang);
+      // Presentation only: preserve the SSOT name; major/minor is ordinary text.
+      const tonic = raisedTonic && key === 'en' && /^([A-G])([♯♭])( major| minor)$/.exec(row.en);
+      if (tonic) {
+        cell.textContent = '';
+        const root = textElement('span', tonic[1], 'key-tonic');
+        root.append(textElement('sup', tonic[2], 'key-tonic-accidental'));
+        cell.append(root, textElement('span', tonic[3]));
+      }
       if (key === 'de') cell.append(germanRuby(row));
       line.append(cell);
     });
@@ -247,7 +255,7 @@ function createKeyContent(block) {
   if (block.question) face.append(textElement("div", block.question, "key-question"));
   if (block.type === "key-notation") {
     face.append(createImageElement(block.image, "key-notation-image"), textElement("div", `（${block.clue}）`, "key-clue"));
-  } else face.append(createLanguageNameTable(block.rows, 'key-name'));
+  } else face.append(createLanguageNameTable(block.rows, 'key-name', !block.question && block.rows.length === 2));
   return face;
 }
 
