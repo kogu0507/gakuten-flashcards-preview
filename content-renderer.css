@@ -183,7 +183,6 @@
 .chord-code-value { font-size: 1rem; line-height: 1.125; font-weight: 700; }
 /* Adopt the site's root/suffix position with the existing local app font.
    Zero suffix leading preserves the fixed line box while raising its glyphs. */
-.chord-code-suffix { font-size: 70%; vertical-align: .5em; line-height: 0; }
 
 /* Separate questions: language terms are peers; the code has its own face. */
 .chord-quality-table { width: 100%; table-layout: fixed; border-collapse: collapse; text-align: center; }
@@ -194,5 +193,3 @@
 .chord-quality-table tbody tr + tr { border-top: 1px solid #e3e6eb; }
 .chord-symbol-value { font-size: clamp(2rem, 8vw, 2.5rem); line-height: 1.4; font-weight: 500; }
 .key-tonic { white-space: nowrap; }
-.key-tonic-accidental { font-size: 100%; vertical-align: .2em; line-height: 0; }
-.key-name-en:has(.key-tonic-accidental) { padding-top: 4px; }

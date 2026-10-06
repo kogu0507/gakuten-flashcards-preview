@@ -207,7 +207,7 @@ function createLanguageNameTable(rows, classPrefix, raisedTonic = false) {
       if (tonic) {
         cell.textContent = '';
         const root = textElement('span', tonic[1], 'key-tonic');
-        root.append(textElement('sup', tonic[2], 'key-tonic-accidental'));
+        root.append(textElement('sup', tonic[2], 'noto-music-symbol ' + (tonic[2] === '♯' ? 'sharp' : 'flat')));
         cell.append(root, textElement('span', tonic[3]));
       }
       if (key === 'de') cell.append(germanRuby(row));

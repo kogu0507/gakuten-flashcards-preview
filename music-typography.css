@@ -1,0 +1,12 @@
+/* Music-only core from the site's Noto Music design; no global body/heading rules.
+   Font subset is self-hosted, licensed under OFL; no runtime Google request. */
+@font-face {
+  font-family: 'Noto Music';
+  src: url('./assets/fonts/noto-music/accidentals.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.noto-music-symbol { font-family: 'Noto Music', system-ui, sans-serif; }
+sup.noto-music-symbol.sharp, sup.noto-music-symbol.flat { font-size: 100%; line-height: 0; }
+.chord-code-suffix { font-size: 70%; vertical-align: .5em; line-height: 0; }
