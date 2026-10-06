@@ -1,4 +1,5 @@
 import { exact, safeText, validateDegreePairs } from './interval-foundations.js';
+import { scaleChordConcept } from './scale-chord-concepts.js';
 import { triadName, triadCodeName, triadCodeParts } from './chord-terminology.js';
 import { naturalTriadTargets } from './triad-natural-roots-meta.js';
 import {naturalSeventhTargets} from './seventh-natural-roots-meta.js';
@@ -296,6 +297,10 @@ export function normalizeCardContent(content, fallbackText = "") {
   return content.map((block) => {
     if (!block || typeof block !== "object") throw new TypeError("Card content blocks must be objects");
     if (block.type === 'recall-answer') return normalizeRecallAnswer(block);
+    if (block.type === 'concept-recall') {
+      exact(block,['type','concept','explanation']); scaleChordConcept(block.concept); safeText(block.explanation,100);
+      return {type:block.type,concept:block.concept,explanation:block.explanation};
+    }
     if (block.type === "related-key-diagram") {
       exactFields(block, ['type', 'signature', 'mode', 'blank']);
       relatedKeyDiagram(block.signature, block.mode);
@@ -426,6 +431,7 @@ export function renderCardContent(container, content, fallbackText = "") {
   container.replaceChildren();
   for (const block of blocks) {
     if (block.type === 'recall-answer') { container.append(createRecallAnswer(block)); continue; }
+    if (block.type === 'concept-recall') { container.append(createConceptRecall(block)); continue; }
     if (block.type === "related-key-diagram") {
       if (block.blank) container.append(textElement('span', relatedKeyQuestion, 'card-content-text'));
       container.append(createRelatedKeyDiagram(block)); continue;
@@ -528,6 +534,29 @@ function createRecallAnswer(block) {
   }
   face.append(explanation);
   return face;
+}
+
+function createConceptRecall(block) {
+  const term=scaleChordConcept(block.concept),face=textElement('div','','concept-recall');
+  const table=textElement('table','','concept-recall-table');table.setAttribute('aria-label','答え、日本語・英語・ドイツ語');
+  const body=document.createElement('tbody');
+  for(const [key,label,lang] of [['jp','日本語','ja'],['en','English','en'],['de','Deutsch','de']]) {
+    const row=document.createElement('tr'),heading=textElement('th',label),cell=textElement('td','');
+    heading.setAttribute('scope','row'); heading.setAttribute('lang',lang);cell.setAttribute('lang',lang);
+    if(key==='jp')cell.textContent=term.jp;
+    else {
+      const readings=term[key+'Reading'],words=readings.length===1?[term[key]]:term[key].split(' ');
+      cell.setAttribute('aria-label',term[key]);
+      words.forEach((word,index)=>{
+        if(index)cell.append(textElement('span',' '));
+        const ruby=document.createElement('ruby'),value=block.concept==='seventh'&&key==='en'&&index===0?textElement('abbr','7th'):textElement('span',word);
+        if(value.tagName==='ABBR')value.setAttribute('title','seventh');
+        ruby.append(value,textElement('rp','（'),textElement('rt',readings[index]),textElement('rp','）'));cell.append(ruby);
+      });
+    }
+    row.append(heading,cell);body.append(row);
+  }
+  table.append(body);face.append(table,textElement('div',block.explanation,'concept-recall-explanation'));return face;
 }
 
 function createRelatedKeyDiagram(block) {

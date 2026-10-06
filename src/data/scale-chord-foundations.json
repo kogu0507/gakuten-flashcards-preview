@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "gakuten-scale-chord-foundations/v1",
+  "title": "音階・和音の基礎知識",
+  "sources": [
+    {
+      "id": "senzoku-scales",
+      "title": "洗足 音階",
+      "url": "https://www.senzoku-online.jp/theory/classic/06/onkai-01.html",
+      "status": "文案で確認済み"
+    },
+    {
+      "id": "ps-scales",
+      "title": "Puget Sound Scale Degree Names",
+      "url": "https://musictheory.pugetsound.edu/mt21c/ScaleDegreeNames.html",
+      "status": "2026-10-07再取得確認"
+    },
+    {
+      "id": "lehr-minor",
+      "title": "Lehrklänge Molltonarten",
+      "url": "https://www.lehrklaenge.de/PHP/Tonarten/Molltonarten.php",
+      "status": "2026-10-07独語natural minor再取得確認"
+    },
+    {
+      "id": "senzoku-chords",
+      "title": "洗足 和音と三和音",
+      "url": "https://www.senzoku-online.jp/theory/classic/08/waon-01.html",
+      "status": "文案で確認済み"
+    },
+    {
+      "id": "ableton-inversions",
+      "title": "Ableton Umkehrungen",
+      "url": "https://learningmusic.ableton.com/de/advanced-topics/inversions.html",
+      "status": "2026-10-07Grundton/Grundstellung/Umkehrung再取得確認"
+    },
+    {
+      "id": "ableton-seventh",
+      "title": "Ableton Septakkorde",
+      "url": "https://learningmusic.ableton.com/de/advanced-topics/seventh-chords.html",
+      "status": "既存七の和音SSOTで確認済み"
+    }
+  ],
+  "cards": [
+    {
+      "id": "scale-foundation-scale",
+      "topic": "音階",
+      "prompt": "音を一定の音程の並びに従って、高さの順に並べた音列を（　）という。",
+      "answer": "音階",
+      "explanation": "長音階・短音階のほか、五音音階などもあります。",
+      "concept": "scale",
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-foundation-tonic",
+      "topic": "主音",
+      "prompt": "長調・短調の中心となる、音階の第I音を（　）という。",
+      "answer": "主音",
+      "explanation": "ハ長調でもハ短調でも、主音はハです。",
+      "concept": "tonic",
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-foundation-major-half-steps",
+      "topic": "長音階",
+      "prompt": "長音階で、隣り合う音が半音になるのは第III–IV音間と第（　）音間である。",
+      "answer": "VII–VIII",
+      "explanation": "主音を第I音、1オクターブ上を第VIII音と数えます。ほかは全音です。",
+      "concept": null,
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "scale-foundation-natural-minor-half-steps",
+      "topic": "自然短音階",
+      "prompt": "自然短音階で、隣り合う音が半音になるのは第II–III音間と第（　）音間である。",
+      "answer": "V–VI",
+      "explanation": "主音を第I音、1オクターブ上を第VIII音として確認します。",
+      "concept": null,
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "scale-foundation-harmonic-minor-seventh",
+      "topic": "和声的短音階",
+      "prompt": "和声的短音階は、同じ主音の自然短音階の第（　）音を半音高めた形である。",
+      "answer": "VII",
+      "explanation": "第VII音と、その上の主音との間が半音になります。",
+      "concept": null,
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "scale-foundation-melodic-minor-ascending",
+      "topic": "旋律的短音階・上行",
+      "prompt": "伝統的な旋律的短音階の上行形では、自然短音階の第VI・第VII音を（　）高める。",
+      "answer": "半音",
+      "explanation": "同じ主音の自然短音階と比べます。下行形は別カードで確認します。",
+      "concept": "half",
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-foundation-melodic-minor-descending",
+      "topic": "旋律的短音階・下行",
+      "prompt": "伝統的な旋律的短音階の下行形は、同じ主音の（　）と同じ音の並びになる。",
+      "answer": "自然短音階",
+      "explanation": "上行で高めた第VI・第VII音を、下行では自然短音階の高さに戻します。",
+      "concept": "natural-minor",
+      "sources": [
+        "senzoku-scales",
+        "ps-scales",
+        "lehr-minor"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-chord",
+      "topic": "和音",
+      "prompt": "高さの違う複数の音を同時に響かせたまとまりを（　）という。",
+      "answer": "和音",
+      "explanation": "このセットでは、主に三和音・七の和音を扱います。",
+      "concept": "chord",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-root",
+      "topic": "根音",
+      "prompt": "三和音・七の和音を3度ずつ積み重ねて表したとき、土台になる音を（　）という。",
+      "answer": "根音",
+      "explanation": "実際に鳴る最低音と、根音が同じとは限りません。",
+      "concept": "root",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-triad",
+      "topic": "三和音",
+      "prompt": "3度ずつ積み重ねた3音からなる和音を（　）という。",
+      "answer": "三和音",
+      "explanation": "根音・第3音・第5音からなります。",
+      "concept": "triad",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-seventh",
+      "topic": "七の和音",
+      "prompt": "根音から第7音まで、3度ずつ重ねてできる和音を（　）という。",
+      "answer": "七の和音",
+      "explanation": "根音・第3音・第5音・第7音からなる四和音です。",
+      "concept": "seventh",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-root-position",
+      "topic": "基本形",
+      "prompt": "三和音・七の和音で、根音が最低音となる形を（　）という。",
+      "answer": "基本形",
+      "explanation": "上の音の並べ方を変えても、根音が最低音なら基本形です。",
+      "concept": "root-position",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "chord-foundation-inversion",
+      "topic": "転回形",
+      "prompt": "三和音・七の和音で、根音以外の構成音が最低音となる形を（　）という。",
+      "answer": "転回形",
+      "explanation": "構成音の音名を変えず、どの音を最低音にするかを変えます。",
+      "concept": "inversion",
+      "sources": [
+        "senzoku-chords",
+        "ableton-inversions",
+        "ableton-seventh"
+      ],
+      "reviewNotes": [
+        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+      ]
+    }
+  ]
+}

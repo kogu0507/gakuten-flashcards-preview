@@ -3,6 +3,7 @@ import { allNaturalTriadCardIds } from './triad-natural-roots-meta.js';
 import {allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
 import { relatedKeyCardIds } from './key-relationships-meta.js';
 import { imageToKeyIds, keyToImageIds } from "./key-signature-meta.js";
+import {scaleFoundationIds,chordFoundationIds} from './scale-chord-foundations-meta.js';
 import { naturalIntervalCardIds } from "./natural-note-interval-meta.js";
 import { inversionCardIds } from "./interval-inversion-meta.js";
 import { scaleCardIds } from "./scale-writing-meta.js";
@@ -55,7 +56,9 @@ export const collectionManifest = [
   { id: "key-relationships", title: "近親調", description: "長調15調・短調15調を主調とし、属調・下属調・平行調・同主調を表で確認します。短調の属調・下属調は自然短調の関係です。", cardCount: 30, modulePath: "./collections/key-relationships.js", cardIds: relatedKeyCardIds },
   { id: 'interval-foundations', title: '音程の基礎用語', description: '音程の基本用語を穴埋めで思い出す32枚。答え・短い解説・英語の読みで確認します。基本概念を短い解説で確認します。', cardCount: 32, modulePath: './collections/interval-foundations.js', cardIds: foundationCardIds },
   {id:'triad-identification',title:'三和音（基本形）',description:'根音が幹音の28譜例。種類28枚とコード28枚は別問題で、同じSVGを共有します。',cardCount:56,modulePath:'./collections/triad-identification.js',cardIds:allNaturalTriadCardIds},
-  {id:'seventh-chord-identification',title:'七の和音（基本形）',description:'根音C・D・E・F・G・A・Bの42譜例。種類42枚とコード42枚は別問題で、同じSVGを共有します。',cardCount:84,modulePath:'./collections/seventh-chord-identification.js',cardIds:allNaturalSeventhCardIds}
+  {id:'seventh-chord-identification',title:'七の和音（基本形）',description:'根音C・D・E・F・G・A・Bの42譜例。種類42枚とコード42枚は別問題で、同じSVGを共有します。',cardCount:84,modulePath:'./collections/seventh-chord-identification.js',cardIds:allNaturalSeventhCardIds},
+  {id:'scale-foundations',title:'音階の基礎知識',description:'音階・主音・短音階の形を穴埋めで確認する7枚。用語の答えは三言語と読み付き。',cardCount:7,modulePath:'./collections/scale-foundations.js',cardIds:scaleFoundationIds},
+  {id:'chord-foundations',title:'和音の基礎知識',description:'和音・根音・基本形と転回形を穴埋めで確認する6枚。用語の答えは三言語と読み付き。',cardCount:6,modulePath:'./collections/chord-foundations.js',cardIds:chordFoundationIds},
 ];
 
 const collectionMap = new Map(collectionManifest.map((item) => [item.id, item]));

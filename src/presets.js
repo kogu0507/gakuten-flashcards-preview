@@ -5,6 +5,7 @@ import {seventhQualityIds,seventhCodeIds} from './seventh-chord-meta.js';
 import {naturalSeventhQualityIds,naturalSeventhCodeIds,allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
 import { relatedKeyCardIds } from './key-relationships-meta.js';
 import { keySignatureIds } from "./key-signature-meta.js";
+import {scaleFoundationIds,chordFoundationIds} from './scale-chord-foundations-meta.js';
 import { scaleTypes, scaleAnswerModes, scaleSelectionCardIds } from "./scale-writing-meta.js";
 import { inversionCardIds, inversionDegreeCardIds, inversionQualityCardIds, inversionRuleCardIds, inversionAppliedCardIds } from "./interval-inversion-meta.js";
 import { getCollectionMeta } from "./manifest.js";
@@ -38,6 +39,9 @@ const signatureRanges = [
 ];
 
 export const presets = [
+  {id:'scale-foundations-all',title:'全範囲',description:'音階の基礎知識7枚',collectionIds:['scale-foundations'],cardIds:[...scaleFoundationIds]},
+  {id:'chord-foundations-all',title:'全範囲',description:'和音の基礎知識6枚',collectionIds:['chord-foundations'],cardIds:[...chordFoundationIds]},
+  {id:'scale-chord-foundations-all',title:'音階・和音の基礎知識13枚',description:'確認用の混合集合',collectionIds:['scale-foundations','chord-foundations'],cardIds:[...scaleFoundationIds,...chordFoundationIds],shelfVisible:false},
   {id:'triad-identification-pilot',title:'三和音の種類 4枚（試作）',description:'長・短・減・増、根音ハの基本形',collectionIds:['triad-identification'],cardIds:[...triadPilotCardIds],shelfVisible:false},
   {id:'triad-code-pilot',title:'コードネーム 4枚（試作）',description:'同じ4譜例のコードネームだけを答える',collectionIds:['triad-identification'],cardIds:[...triadCodeCardIds],shelfVisible:false},
   {id:'chord-all',title:'全範囲',description:'三和音56枚＋七の和音84枚。種類問題とコード問題',collectionIds:['triad-identification','seventh-chord-identification'],shelfCollectionId:'triad-identification',cardIds:[...allNaturalTriadCardIds,...allNaturalSeventhCardIds]},
