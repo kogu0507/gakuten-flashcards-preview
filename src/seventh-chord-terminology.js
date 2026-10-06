@@ -15,7 +15,7 @@ const suffixes=Object.freeze({diminished:'dim7','half-diminished':'m7',minor:'m7
 const fifths=Object.freeze({'half-diminished':'flat','augmented-major':'sharp'});
 export function seventhCodeParts(root,quality){
   seventhName(quality);
-  if(root!=='C')throw new RangeError('Unsupported seventh pilot root');
+  if(typeof root!=='string'||!['C','D','E','F','G','A','B'].includes(root))throw new RangeError('Unsupported natural seventh root');
   return Object.freeze({root,suffix:suffixes[quality],fifth:fifths[quality]??null});
 }
 export function seventhCodeName(root,quality){

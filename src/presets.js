@@ -1,7 +1,8 @@
 import { foundationCardIds } from './interval-foundations-meta.js';
 import { triadPilotCardIds,triadCodeCardIds } from './triad-identification-meta.js';
 import {naturalTriadQualityIds,naturalTriadCodeIds,allNaturalTriadCardIds} from './triad-natural-roots-meta.js';
-import {seventhQualityIds,seventhCodeIds,allSeventhPilotCardIds} from './seventh-chord-meta.js';
+import {seventhQualityIds,seventhCodeIds} from './seventh-chord-meta.js';
+import {naturalSeventhQualityIds,naturalSeventhCodeIds,allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
 import { relatedKeyCardIds } from './key-relationships-meta.js';
 import { keySignatureIds } from "./key-signature-meta.js";
 import { scaleTypes, scaleAnswerModes, scaleSelectionCardIds } from "./scale-writing-meta.js";
@@ -39,15 +40,17 @@ const signatureRanges = [
 export const presets = [
   {id:'triad-identification-pilot',title:'三和音の種類 4枚（試作）',description:'長・短・減・増、根音ハの基本形',collectionIds:['triad-identification'],cardIds:[...triadPilotCardIds],shelfVisible:false},
   {id:'triad-code-pilot',title:'コードネーム 4枚（試作）',description:'同じ4譜例のコードネームだけを答える',collectionIds:['triad-identification'],cardIds:[...triadCodeCardIds],shelfVisible:false},
-  {id:'chord-all',title:'全範囲',description:'三和音56枚＋根音Cの七の和音12枚。種類問題とコード問題',collectionIds:['triad-identification','seventh-chord-identification'],shelfCollectionId:'triad-identification',cardIds:[...allNaturalTriadCardIds,...allSeventhPilotCardIds]},
+  {id:'chord-all',title:'全範囲',description:'三和音56枚＋七の和音84枚。種類問題とコード問題',collectionIds:['triad-identification','seventh-chord-identification'],shelfCollectionId:'triad-identification',cardIds:[...allNaturalTriadCardIds,...allNaturalSeventhCardIds]},
   {id:'triad-all',title:'三和音のみ',description:'C～Bの幹音根音・三和音28譜例、種類とコードの56枚',collectionIds:['triad-identification'],cardIds:[...allNaturalTriadCardIds],separatorBefore:true},
   {id:'triad-natural-roots',title:'根音が幹音の三和音',description:'C～Bの7根音・4種類。現在の三和音収録範囲',collectionIds:['triad-identification'],cardIds:[...allNaturalTriadCardIds],separatorBefore:true},
   {id:'triad-quality-natural-roots',title:'和音の種類だけ',description:'日本語・英語・ドイツ語で種類を答える',collectionIds:['triad-identification'],cardIds:[...naturalTriadQualityIds],separatorBefore:true},
   {id:'triad-code-natural-roots',title:'コードネームだけ',description:'同じ28譜例のコードネームだけを答える',collectionIds:['triad-identification'],cardIds:[...naturalTriadCodeIds]},
-  {id:'seventh-all',title:'七の和音のみ',description:'現在は根音C・基本形の6種類、12枚',collectionIds:['seventh-chord-identification'],cardIds:[...allSeventhPilotCardIds]},
-  {id:'seventh-natural-roots',title:'根音が幹音の七の和音',description:'現在は根音Cだけ。七の和音のみと同じ12枚',collectionIds:['seventh-chord-identification'],cardIds:[...allSeventhPilotCardIds],separatorBefore:true},
-  {id:'seventh-identification-pilot',title:'和音の種類だけ',description:'根音C・6種類を日本語・英語・ドイツ語で答える',collectionIds:['seventh-chord-identification'],cardIds:[...seventhQualityIds],separatorBefore:true},
-  {id:'seventh-code-pilot',title:'コードネームだけ',description:'同じ6譜例のコードネームだけを答える',collectionIds:['seventh-chord-identification'],cardIds:[...seventhCodeIds]},
+  {id:'seventh-all',title:'七の和音のみ',description:'幹音根音C～B・基本形の6種類、84枚',collectionIds:['seventh-chord-identification'],cardIds:[...allNaturalSeventhCardIds]},
+  {id:'seventh-natural-roots',title:'根音が幹音の七の和音',description:'幹音根音C～B。現在は七の和音のみと同じ84枚',collectionIds:['seventh-chord-identification'],cardIds:[...allNaturalSeventhCardIds],separatorBefore:true},
+  {id:'seventh-quality-natural-roots',title:'和音の種類だけ',description:'幹音根音42譜例を日本語・英語・ドイツ語で答える',collectionIds:['seventh-chord-identification'],cardIds:[...naturalSeventhQualityIds],separatorBefore:true},
+  {id:'seventh-code-natural-roots',title:'コードネームだけ',description:'同じ42譜例のコードネームを答える',collectionIds:['seventh-chord-identification'],cardIds:[...naturalSeventhCodeIds]},
+  {id:'seventh-identification-pilot',title:'和音の種類だけ',description:'根音C・6種類を日本語・英語・ドイツ語で答える',collectionIds:['seventh-chord-identification'],cardIds:[...seventhQualityIds],shelfVisible:false,separatorBefore:true},
+  {id:'seventh-code-pilot',title:'コードネームだけ',description:'同じ6譜例のコードネームだけを答える',collectionIds:['seventh-chord-identification'],cardIds:[...seventhCodeIds],shelfVisible:false},
   { id: 'interval-foundations-all', title: '全範囲', description: '音程・転回・分類・音と記号の基本用語', collectionIds: ['interval-foundations'], cardIds: [...foundationCardIds] },
   { id: 'interval-foundations-core', title: 'まず覚える：数え方・種類・転回', description: '音程計算と、その前提となる音・記号', collectionIds: ['interval-foundations'], cardIds: foundationCardIds.filter(id => !foundationContextIds.has(id)) },
   { id: 'interval-foundations-context', title: '理解を広げる：響き・分類・関連用語', description: '鳴らし方・響きの分類・綴りの読み替え', collectionIds: ['interval-foundations'], cardIds: foundationCardIds.filter(id => foundationContextIds.has(id)) },

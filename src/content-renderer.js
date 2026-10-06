@@ -1,7 +1,7 @@
 import { exact, safeText, validateDegreePairs } from './interval-foundations.js';
 import { triadName, triadCodeName, triadCodeParts } from './chord-terminology.js';
 import { naturalTriadTargets } from './triad-natural-roots-meta.js';
-import {seventhPilotTargets} from './seventh-chord-meta.js';
+import {naturalSeventhTargets} from './seventh-natural-roots-meta.js';
 import {seventhName,seventhCodeName,seventhCodeParts} from './seventh-chord-terminology.js';
 import { relatedKeyDiagram, relatedKeyName, relatedKeyQuestion } from './key-relationships.js';
 import { melodicDisplayCrops } from "./scale-notation-crops.js";
@@ -313,7 +313,7 @@ export function normalizeCardContent(content, fallbackText = "") {
     }
     if(block.type==='seventh-notation'){
       exactFields(block,['type','assetId','question']);
-      if(typeof block.assetId!=='string'||!seventhPilotTargets.some(t=>t.assetId===block.assetId))throw new TypeError('Unknown prepared seventh asset');
+      if(typeof block.assetId!=='string'||!naturalSeventhTargets.some(t=>t.assetId===block.assetId))throw new TypeError('Unknown prepared seventh asset');
       const question=boundedString(block.question,'seventh question',32);
       if(/[<>\u0000-\u001f\u007f]/u.test(question))throw new TypeError('Invalid seventh question');
       return {type:block.type,assetId:block.assetId,question};
