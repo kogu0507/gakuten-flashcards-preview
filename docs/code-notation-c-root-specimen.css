@@ -1,0 +1,25 @@
+/* Standalone review artifact only; no body/heading !important or app import. */
+.code-specimen-page { margin: 0; background: #f1f4f7; color: #172432; font: 16px/1.55 system-ui,sans-serif; }
+.code-specimen-page main { max-width: 1024px; margin: auto; padding: 20px; }
+.code-specimen-page h1 { font-size: 1.6rem; }
+.code-specimen-page h2 { font-size: 1.2rem; margin: 0 0 8px; }
+.code-specimen-page h3 { font-size: .9rem; margin: 12px 0 4px; }
+.code-specimen-page small { font-size: .75rem; font-weight: 400; color: #4d5e70; }
+.specimen-row { background: white; border: 1px solid #dce3eb; border-radius: 12px; margin: 20px 0; padding: 16px; }
+.pitches,.draft-note,.source-note { font-size: .85rem; margin: 6px 0; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.example { min-width: 0; border: 1px solid #e0e6ed; padding: 12px; border-radius: 8px; }
+.example p { font-size: .75rem; color: #506277; margin: 0 0 6px; }
+.code-display { font-size: 36px; font-weight: 400; line-height: 1.5; white-space: nowrap; display: inline-block; }
+.plain-code { font-family: system-ui,sans-serif; }
+.music-code,.music-glyph { font-family: 'Noto Music',system-ui,sans-serif; }
+.code-suffix { font-size: 70%; vertical-align: .5em; }
+.code-suffix .token-sharp { font-size: 110%; vertical-align: .2em; }
+.code-suffix .token-flat { font-size: 110%; vertical-align: 0; }
+.root-accidental { font-size: 100%; }
+.root-double-sharp { font-size: 130%; }
+.probe-grid,.character-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.glyph-probe,.character-probe { padding: 10px; background: white; border: 1px solid #dce3eb; }
+.probe-character { font-size: 36px; display: inline-block; margin-right: 12px; }
+.character-probe small { display: block; overflow-wrap: anywhere; }
+@media(max-width:600px) { .code-specimen-page main { padding: 12px; }.comparison { grid-template-columns: 1fr; }.specimen-row { padding: 12px; }.probe-grid,.character-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.code-display,.probe-character { font-size: 32px; } }

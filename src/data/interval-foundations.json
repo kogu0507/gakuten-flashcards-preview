@@ -1,0 +1,1028 @@
+{
+  "schemaVersion": "gakuten-interval-foundations/v1",
+  "title": "音程の基礎用語",
+  "sources": [
+    {
+      "id": "ps-intervals",
+      "title": "Music Theory for the 21st-Century Classroom",
+      "url": "https://musictheory.pugetsound.edu/mt21c/IntervalsIntroduction.html",
+      "location": "5.1 / 5.1.1 / 5.1.2",
+      "status": "確認済"
+    },
+    {
+      "id": "omt",
+      "title": "Open Music Theory — Intervals",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/intervals/",
+      "location": "Key Takeaways / Size / Qualities / Simple and Compound / Inversion / Consonance and Dissonance",
+      "status": "検索キャッシュの本文確認（直接再取得403）。和声分類ではP4は不協和、旋律分類は2度も協和。日本語基本分類と区別"
+    },
+    {
+      "id": "ps-steps",
+      "title": "Music Theory for the 21st-Century Classroom",
+      "url": "https://musictheory.pugetsound.edu/mt21c/HalfStepsAndWholeSteps.html",
+      "location": "2.1 Half Steps and Whole Steps",
+      "status": "確認済"
+    },
+    {
+      "id": "ps-enharmonic",
+      "title": "Music Theory for the 21st-Century Classroom",
+      "url": "https://musictheory.pugetsound.edu/mt21c/EnharmonicNotes.html",
+      "location": "1.5 Enharmonic Notes",
+      "status": "確認済"
+    },
+    {
+      "id": "ps-accidentals",
+      "title": "Music Theory for the 21st-Century Classroom",
+      "url": "https://musictheory.pugetsound.edu/mt21c/Accidentals.html",
+      "location": "1.4 Accidentals",
+      "status": "確認済"
+    },
+    {
+      "id": "senzoku",
+      "title": "洗足オンラインスクール",
+      "url": "https://www.senzoku-online.jp/theory/classic/05/ontei-09.html",
+      "location": "音程 p.9 転回音程の求め方",
+      "status": "確認済"
+    },
+    {
+      "id": "ontomo",
+      "title": "今村央子 — 第九で学ぶ楽典・ソルフェージュ第5回",
+      "url": "https://ontomo-mag.com/article/series/solfege-5/",
+      "location": "音程の補足と応用 / 協和音程と不協和音程",
+      "status": "確認済（直接取得HTML）"
+    },
+    {
+      "id": "komaki",
+      "title": "Kazuhi Komaki — 2.2 音程（後半）",
+      "url": "https://note.com/kazmaki_416/n/nf64b6a22becf",
+      "location": "2.2.8〜2.2.11",
+      "status": "著者解説確認済。境界例は明示的に割愛"
+    },
+    {
+      "id": "rittor",
+      "title": "リットーミュージック plug+ 臨時記号",
+      "url": "https://plugplus.rittor-music.co.jp/knowledge/term/g-ri/accidentalmark/",
+      "location": "accidental mark",
+      "status": "確認済"
+    },
+    {
+      "id": "shoin",
+      "title": "大阪樟蔭リポジトリ資料（指定入口）",
+      "url": "https://osaka-shoin.repo.nii.ac.jp/record/3665/files/KJ00006860674.pdf",
+      "location": "指定PDF",
+      "status": "取得失敗。根拠として採用していない"
+    },
+    {
+      "id": "omt-steps",
+      "title": "Open Music Theory — Half and Whole Steps（指定入口）",
+      "url": "https://viva.pressbooks.pub/openmusictheory/chapter/half-and-whole-steps/",
+      "location": "指定URL",
+      "status": "取得403。代替はps-steps"
+    },
+    {
+      "id": "pronunciation",
+      "title": "Cambridge Dictionary（出版社自身の発音情報）",
+      "url": "https://dictionary.cambridge.org/dictionary/english/interval",
+      "location": "各単語のdictionary/englishページ。確認語とURLは用語出典docs参照",
+      "status": "カタカナは英米差・弱母音を簡略化した編集上の近似。人間校閲待ち"
+    },
+    {
+      "id": "senzoku-notes",
+      "title": "洗足オンラインスクール — 音名",
+      "url": "https://www.senzoku-online.jp/theory/classic/02/onmei-02.html",
+      "location": "音名p.2 幹音と派生音／ミ♯の例。p.5 日本語と英語の音名表",
+      "status": "本文確認済。幹音を鍵盤色で定義しない"
+    },
+    {
+      "id": "fukui",
+      "title": "北川尚希ほか「計算機処理に基づく純正律音楽表現の実現」福井大学大学院工学研究科研究報告59巻（2011）",
+      "url": "https://www.eng.u-fukui.ac.jp/wp-content/uploads/vol59_12-19.pdf",
+      "location": "誌面p.10–11（PDF2–3ページ）2.1と表1の協和分類・絶対協和。p.12（PDF4ページ）2.2.2の十二平均律",
+      "status": "PDFを取得し画像で当該ページ確認。純正律の研究であり、周波数比を十二平均律の比として転用しない"
+    },
+    {
+      "id": "pron-interval",
+      "title": "Cambridge Dictionary — interval",
+      "url": "https://dictionary.cambridge.org/dictionary/english/interval",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-number",
+      "title": "Cambridge Dictionary — number",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/number",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-melodic",
+      "title": "Cambridge Dictionary — melodic",
+      "url": "https://dictionary.cambridge.org/dictionary/english/melodic",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-harmonic",
+      "title": "Cambridge Dictionary — harmonic",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/harmonic",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-half",
+      "title": "Cambridge Dictionary — half",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/half",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-whole",
+      "title": "Cambridge Dictionary — whole",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/whole",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-major",
+      "title": "Cambridge Dictionary — major",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/major",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-minor",
+      "title": "Cambridge Dictionary — minor",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/minor",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-augmented",
+      "title": "Cambridge Dictionary — augmented",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/augmented",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-diminished",
+      "title": "Cambridge Dictionary — diminished",
+      "url": "https://dictionary.cambridge.org/dictionary/english/diminished",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-simple",
+      "title": "Cambridge Dictionary — simple",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/simple",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-compound",
+      "title": "Cambridge Dictionary — compound",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/compound",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-inversion",
+      "title": "Cambridge Dictionary — inversion",
+      "url": "https://dictionary.cambridge.org/dictionary/english/inversion",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-enharmonic",
+      "title": "Cambridge Dictionary — enharmonic",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/enharmonic",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-consonant",
+      "title": "Cambridge Dictionary — consonant",
+      "url": "https://dictionary.cambridge.org/dictionary/english/consonant",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-dissonant",
+      "title": "Cambridge Dictionary — dissonant",
+      "url": "https://dictionary.cambridge.org/dictionary/english/dissonant",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "pron-accidental",
+      "title": "Cambridge Dictionary — accidental",
+      "url": "https://dictionary.cambridge.org/pronunciation/english/accidental",
+      "location": "英米発音欄（語音を学習補助のカタカナへ近似）",
+      "status": "本文または検索キャッシュの発音欄を確認。英語句の意味は音楽教材側を参照。equivalentsの語幹・複数語尾とstepは別途確認"
+    },
+    {
+      "id": "senzoku-inversion",
+      "title": "洗足オンラインスクール — 転回音程",
+      "url": "https://www.senzoku-online.jp/theory/classic/05/ontei-08.html",
+      "location": "音程p.8 転回の定義／コラム「複音程はどこから？」",
+      "status": "確認済。増8度・重増7度を完全8度超の複音程として説明"
+    },
+    {
+      "id": "rittor-unison",
+      "title": "リットーミュージック — 増音程／減音程（出版社付録）",
+      "url": "https://www.rittor-music.co.jp/e/furoku/pdf/3118333004.pdf",
+      "location": "増音程／減音程の節。「減1度という使い方はしない」",
+      "status": "検索取得本文を確認。1度の例外は通常の楽典の非負の隔たりとして説明"
+    }
+  ],
+  "cards": [
+    {
+      "id": "interval-foundation-interval",
+      "topic": "音程",
+      "prompt": "2つの音の高さの隔たりを（　）という。",
+      "answer": "音程",
+      "explanation": "音程は、音の高さの関係を表します。",
+      "foreignTerms": [
+        "interval"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt",
+        "pronunciation",
+        "pron-interval"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-number-quality",
+      "topic": "度数・種類（質）",
+      "prompt": "音程の名称は、（　）と種類（質）の組み合わせで表す。",
+      "answer": "度数",
+      "explanation": "「長3度」では、3度が度数、長が種類です。",
+      "foreignTerms": [
+        "number"
+      ],
+      "emphasis": [
+        "度数"
+      ],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt",
+        "pronunciation",
+        "pron-number"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-inclusive-counting",
+      "topic": "度数の数え方",
+      "prompt": "度数を数えるとき、両端の音を（含める・含めない）。",
+      "answer": "含める",
+      "explanation": "ドからミは、ド・レ・ミの3つを数えて3度です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-accidentals-number",
+      "topic": "臨時記号と度数",
+      "prompt": "音符の位置を変えず、臨時記号だけを変えても、音程の（　）は変わらない。",
+      "answer": "度数",
+      "explanation": "ド–ミもド–ミ♭も3度ですが、種類は異なります。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "音符の位置を変えず、臨時記号だけを変えても、",
+        "音程の（　）は変わらない。"
+      ]
+    },
+    {
+      "id": "interval-foundation-melodic",
+      "topic": "旋律的音程",
+      "prompt": "2つの音を順に鳴らしたときの音程を（　）という。",
+      "answer": "旋律的音程",
+      "explanation": "続けて鳴る2音の高さの関係。水平的音程ともいいます。",
+      "foreignTerms": [
+        "melodic"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt",
+        "pronunciation",
+        "pron-melodic"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-harmonic",
+      "topic": "和声的音程",
+      "prompt": "2つの音を同時に鳴らしたときの音程を（　）という。",
+      "answer": "和声的音程",
+      "explanation": "同時に鳴る2音の高さの関係。垂直的音程ともいいます。",
+      "foreignTerms": [
+        "harmonic"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-intervals",
+        "omt",
+        "pronunciation",
+        "pron-harmonic"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-half-step",
+      "topic": "半音",
+      "prompt": "十二平均律で、1オクターブを12等分した1つ分の音程を（　）という。",
+      "answer": "半音",
+      "explanation": "ピアノでは、隣り合う鍵盤同士の音の隔たりです。",
+      "foreignTerms": [
+        "half"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "定量的な半音・全音、異名同音の同じ高さは十二平均律で説明。概念そのものを平均律に限定しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "ps-steps",
+        "pronunciation",
+        "pron-half",
+        "fukui"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "十二平均律で、",
+        "1オクターブを12等分した1つ分の音程を（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-whole-step",
+      "topic": "全音",
+      "prompt": "十二平均律では、全音は半音（　）個分である。",
+      "answer": "2",
+      "explanation": "ド–レのように、半音2つ分の隔たりです。",
+      "foreignTerms": [
+        "whole"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "定量的な半音・全音、異名同音の同じ高さは十二平均律で説明。概念そのものを平均律に限定しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "ps-steps",
+        "pronunciation",
+        "pron-whole",
+        "fukui"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-perfect-degrees",
+      "topic": "完全音程の度数",
+      "prompt": "単音程のうち、「完全」をもつ度数は、1・4・5・（　）度である。",
+      "answer": "8",
+      "explanation": "1・4・5・8度は完全系です。増・重増があり、4・5・8度には減・重減もあります。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "rittor-unison"
+      ],
+      "reviewNotes": [
+        "通常の楽典の分類では、1度に減・重減はない。完全系の度数を単音程の範囲で出題。"
+      ],
+      "promptLines": [
+        "単音程のうち、",
+        "「完全」をもつ度数は、",
+        "1・4・5・（　）度である。"
+      ]
+    },
+    {
+      "id": "interval-foundation-major-minor-degrees",
+      "topic": "長・短音程の度数",
+      "prompt": "単音程のうち、「長」「短」をもつ度数は、2・3・6・（　）度である。",
+      "answer": "7",
+      "explanation": "2・3・6・7度には、長・短・増・減・重増・重減の種類があります。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "単音程のうち、",
+        "「長」「短」をもつ度数は、",
+        "2・3・6・（　）度である。"
+      ]
+    },
+    {
+      "id": "interval-foundation-major",
+      "topic": "長音程",
+      "prompt": "短音程より半音広い、同じ度数の音程を（　）という。",
+      "answer": "長音程",
+      "explanation": "長3度は、短3度より半音広い音程です。",
+      "foreignTerms": [
+        "major"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-major"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "短音程より半音広い、",
+        "同じ度数の音程を",
+        "（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-minor",
+      "topic": "短音程",
+      "prompt": "長音程より半音狭い、同じ度数の音程を（　）という。",
+      "answer": "短音程",
+      "explanation": "短3度は、長3度より半音狭い音程です。",
+      "foreignTerms": [
+        "minor"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-minor"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "長音程より半音狭い、",
+        "同じ度数の音程を",
+        "（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-augmented",
+      "topic": "増音程",
+      "prompt": "完全音程や長音程より半音広い、同じ度数の音程を（　）という。",
+      "answer": "増音程",
+      "explanation": "完全5度を半音広げると増5度、さらに半音広げると重増5度になります。",
+      "foreignTerms": [
+        "augmented"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-augmented"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "完全音程や長音程より半音広い、",
+        "同じ度数の音程を",
+        "（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-diminished",
+      "topic": "減音程",
+      "prompt": "短音程より半音狭い、同じ度数の音程を（　）という。",
+      "answer": "減音程",
+      "explanation": "完全4・5・8度も半音狭めると減音程です。通常の楽典では、1度に減・重減はありません。",
+      "foreignTerms": [
+        "diminished"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": "減音程をさらに半音狭めたものが重減音程です。ただし、通常の楽典では1度に減・重減はありません。",
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-diminished",
+        "senzoku",
+        "rittor-unison"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "短音程より半音狭い、",
+        "同じ度数の音程を",
+        "（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-simple",
+      "topic": "単音程",
+      "prompt": "1オクターブ以内の音程を（　）という。",
+      "answer": "単音程",
+      "explanation": "完全8度も含みます。",
+      "foreignTerms": [
+        "simple"
+      ],
+      "emphasis": [
+        "完全8度"
+      ],
+      "conditions": [
+        "初版は完全8度を含む1オクターブ以内／それを超える境界説明。"
+      ],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-simple",
+        "senzoku-inversion"
+      ],
+      "reviewNotes": [
+        "洗足p.8は完全8度を超える増8度・重増7度を複音程と説明。OMTはunison〜octaveの概略、Komakiは境界例を割愛。初版は境界例を出題せず、資料差の有無や採用教科書との整合は人間校閲で判断。"
+      ]
+    },
+    {
+      "id": "interval-foundation-compound",
+      "topic": "複音程",
+      "prompt": "1オクターブを超える音程を（　）という。",
+      "answer": "複音程",
+      "explanation": "長9度は、長2度を1オクターブ広げた音程です。",
+      "foreignTerms": [
+        "compound"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "初版は完全8度を含む1オクターブ以内／それを超える境界説明。"
+      ],
+      "supplement": null,
+      "sources": [
+        "omt",
+        "komaki",
+        "pronunciation",
+        "pron-compound",
+        "senzoku-inversion"
+      ],
+      "reviewNotes": [
+        "洗足p.8は完全8度を超える増8度・重増7度を複音程と説明。OMTはunison〜octaveの概略、Komakiは境界例を割愛。初版は境界例を出題せず、資料差の有無や採用教科書との整合は人間校閲で判断。"
+      ]
+    },
+    {
+      "id": "interval-foundation-inversion",
+      "topic": "音程の転回",
+      "prompt": "1オクターブ以内の単音程を基準に、2音の一方を1オクターブ移して上下を入れ替えることを、音程の（　）という。",
+      "answer": "転回",
+      "explanation": "下の音を1オクターブ上げるか、上の音を1オクターブ下げます。",
+      "foreignTerms": [
+        "inversion"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "1オクターブ以内の単音程を基準とする。複音程へ度数和9を無条件に適用しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "senzoku",
+        "omt",
+        "pronunciation",
+        "pron-inversion",
+        "senzoku-inversion"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "1オクターブ以内の単音程を基準に、",
+        "2音の一方を1オクターブ移して上下を入れ替えることを、",
+        "音程の（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-original",
+      "topic": "原音程",
+      "prompt": "音程を転回するとき、転回する前の音程を（　）という。",
+      "answer": "原音程",
+      "explanation": "長3度を短6度に転回した場合、長3度が原音程です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [
+        "1オクターブ以内の単音程を基準とする。複音程へ度数和9を無条件に適用しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "senzoku",
+        "omt",
+        "senzoku-inversion"
+      ],
+      "reviewNotes": [
+        "転回する前の音程という意味は洗足p.9で確認。「原音程」という呼称は今回参照した本文に明示されていないため、採用教科書での用語確認を人間校閲に残す。"
+      ]
+    },
+    {
+      "id": "interval-foundation-inverted",
+      "topic": "転回音程",
+      "prompt": "音程の転回によってできた音程を（　）という。",
+      "answer": "転回音程",
+      "explanation": "長3度を転回した場合、短6度が転回音程です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [
+        "1オクターブ以内の単音程を基準とする。複音程へ度数和9を無条件に適用しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "senzoku",
+        "omt",
+        "senzoku-inversion"
+      ],
+      "reviewNotes": []
+    },
+    {
+      "id": "interval-foundation-inversion-number",
+      "topic": "転回と度数",
+      "prompt": "単音程を基準にすると、原音程と転回音程の度数の和は（　）になる。",
+      "answer": "9",
+      "explanation": "原音程と転回音程は、1度↔8度、2度↔7度、3度↔6度、4度↔5度の関係です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [
+        "1オクターブ以内の単音程を基準とする。複音程へ度数和9を無条件に適用しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "senzoku",
+        "omt"
+      ],
+      "reviewNotes": [],
+      "degreePairs": [
+        [
+          "1度",
+          "8度"
+        ],
+        [
+          "2度",
+          "7度"
+        ],
+        [
+          "3度",
+          "6度"
+        ],
+        [
+          "4度",
+          "5度"
+        ]
+      ],
+      "promptLines": [
+        "単音程を基準にすると、",
+        "原音程と転回音程の",
+        "度数の和は（　）になる。"
+      ]
+    },
+    {
+      "id": "interval-foundation-inversion-quality",
+      "topic": "転回と種類",
+      "prompt": "単音程の転回では、長↔短、増↔減、重増↔重減となり、完全は（　）になる。",
+      "answer": "完全",
+      "explanation": "種類の対応は、長↔短・増↔減・重増↔重減・完全↔完全です。",
+      "foreignTerms": [],
+      "emphasis": [
+        "重増↔重減",
+        "完全↔完全"
+      ],
+      "conditions": [
+        "1オクターブ以内の単音程を基準とする。複音程へ度数和9を無条件に適用しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "senzoku",
+        "omt",
+        "senzoku"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "単音程の転回では、",
+        "長↔短、増↔減、",
+        "重増↔重減となり、",
+        "完全は（　）になる。"
+      ]
+    },
+    {
+      "id": "interval-foundation-enharmonic",
+      "topic": "異名同音",
+      "prompt": "十二平均律で、音名が違っても同じ高さになる音を（　）という。",
+      "answer": "異名同音",
+      "explanation": "ド♯とレ♭など。音名は違っても高さは同じです。",
+      "foreignTerms": [
+        "enharmonic"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "定量的な半音・全音、異名同音の同じ高さは十二平均律で説明。概念そのものを平均律に限定しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "ps-enharmonic",
+        "omt",
+        "pronunciation",
+        "pron-enharmonic",
+        "fukui"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "十二平均律で、",
+        "音名が違っても同じ高さになる音を（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-enharmonic-respelling",
+      "topic": "異名同音による音程の読み替え",
+      "prompt": "ド–ファ♯の増4度は、ファ♯をソ♭に読み替えると（　）になる。",
+      "answer": "減5度",
+      "explanation": "十二平均律では同じ響きでも、綴りによって音程名が変わります。",
+      "foreignTerms": [],
+      "emphasis": [
+        "綴り"
+      ],
+      "conditions": [
+        "定量的な半音・全音、異名同音の同じ高さは十二平均律で説明。概念そのものを平均律に限定しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "ps-enharmonic",
+        "omt",
+        "fukui"
+      ],
+      "reviewNotes": [],
+      "promptLines": [
+        "ド–ファ♯の増4度は、",
+        "ファ♯をソ♭に読み替えると（　）になる。"
+      ]
+    },
+    {
+      "id": "interval-foundation-consonant",
+      "topic": "協和音程",
+      "prompt": "ここで扱う楽典の基本分類では、完全協和音程と不完全協和音程をまとめて（　）という。",
+      "answer": "協和音程",
+      "explanation": "完全1・4・5・8度と、長短3・6度が該当します。",
+      "foreignTerms": [
+        "consonant"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "今回採用する楽典の基本分類。文脈や時代によって協和・不協和の分類は異なる。"
+      ],
+      "supplement": "ここで扱う楽典の基本分類です。完全4度は、和声・対位法では条件によって不協和として扱われます。「絶対協和」は、あらゆる文脈での評価を保証する名称ではありません。",
+      "sources": [
+        "ontomo",
+        "omt",
+        "pronunciation",
+        "pron-consonant",
+        "fukui"
+      ],
+      "reviewNotes": [
+        "日本語基本分類とOMTの和声／旋律分類を同一視しない。絶対協和の名称・分類は人間校閲対象。"
+      ],
+      "promptLines": [
+        "ここで扱う楽典の基本分類では、",
+        "完全協和音程と不完全協和音程をまとめて（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-dissonant",
+      "topic": "不協和音程",
+      "prompt": "ここで扱う楽典の基本分類では、長短2・7度や増・減音程など、協和音程以外の音程を（　）という。",
+      "answer": "不協和音程",
+      "explanation": "この分類での「不協和」は、響きの良し悪しを評価する言葉ではありません。",
+      "foreignTerms": [
+        "dissonant"
+      ],
+      "emphasis": [],
+      "conditions": [
+        "今回採用する楽典の基本分類。文脈や時代によって協和・不協和の分類は異なる。"
+      ],
+      "supplement": "ここで扱う楽典の基本分類です。完全4度は、和声・対位法では条件によって不協和として扱われます。「絶対協和」は、あらゆる文脈での評価を保証する名称ではありません。",
+      "sources": [
+        "ontomo",
+        "omt",
+        "pronunciation",
+        "pron-dissonant"
+      ],
+      "reviewNotes": [
+        "日本語基本分類とOMTの和声／旋律分類を同一視しない。絶対協和の名称・分類は人間校閲対象。"
+      ],
+      "promptLines": [
+        "ここで扱う楽典の基本分類では、長短2・7度や増・減音程など、",
+        "協和音程以外の音程を（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-perfect-consonance",
+      "topic": "完全協和音程",
+      "prompt": "ここで扱う楽典の基本分類では、完全1・4・5・8度をまとめて（　）という。",
+      "answer": "完全協和音程",
+      "explanation": "この中の完全1・8度を、特に絶対協和音程と呼びます。",
+      "foreignTerms": [],
+      "emphasis": [
+        "協和音程"
+      ],
+      "conditions": [
+        "今回採用する楽典の基本分類。文脈や時代によって協和・不協和の分類は異なる。"
+      ],
+      "supplement": "ここで扱う楽典の基本分類です。完全4度は、和声・対位法では条件によって不協和として扱われます。「絶対協和」は、あらゆる文脈での評価を保証する名称ではありません。",
+      "sources": [
+        "ontomo",
+        "omt",
+        "fukui"
+      ],
+      "reviewNotes": [
+        "日本語基本分類とOMTの和声／旋律分類を同一視しない。絶対協和の名称・分類は人間校閲対象。"
+      ],
+      "promptLines": [
+        "ここで扱う楽典の基本分類では、",
+        "完全1・4・5・8度をまとめて（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-imperfect-consonance",
+      "topic": "不完全協和音程",
+      "prompt": "ここで扱う楽典の基本分類では、長短3・6度をまとめて（　）という。",
+      "answer": "不完全協和音程",
+      "explanation": "「不完全」でも、協和音程の一種です。",
+      "foreignTerms": [],
+      "emphasis": [
+        "協和音程"
+      ],
+      "conditions": [
+        "今回採用する楽典の基本分類。文脈や時代によって協和・不協和の分類は異なる。"
+      ],
+      "supplement": "ここで扱う楽典の基本分類です。完全4度は、和声・対位法では条件によって不協和として扱われます。「絶対協和」は、あらゆる文脈での評価を保証する名称ではありません。",
+      "sources": [
+        "ontomo",
+        "omt",
+        "fukui"
+      ],
+      "reviewNotes": [
+        "日本語基本分類とOMTの和声／旋律分類を同一視しない。絶対協和の名称・分類は人間校閲対象。"
+      ],
+      "promptLines": [
+        "ここで扱う楽典の基本分類では、",
+        "長短3・6度をまとめて（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-absolute-consonance",
+      "topic": "絶対協和音程",
+      "prompt": "完全協和音程のうち、完全1度と完全8度を特に（　）という。",
+      "answer": "絶対協和音程",
+      "explanation": "同じ高さ、またはオクターブ関係の音程です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [
+        "今回採用する楽典の基本分類。文脈や時代によって協和・不協和の分類は異なる。"
+      ],
+      "supplement": "ここで扱う楽典の基本分類です。完全4度は、和声・対位法では条件によって不協和として扱われます。「絶対協和」は、あらゆる文脈での評価を保証する名称ではありません。",
+      "sources": [
+        "ontomo",
+        "omt",
+        "fukui"
+      ],
+      "reviewNotes": [
+        "日本語基本分類とOMTの和声／旋律分類を同一視しない。絶対協和の名称・分類は人間校閲対象。"
+      ],
+      "promptLines": [
+        "完全協和音程のうち、",
+        "完全1度と完全8度を特に（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-natural-note",
+      "topic": "幹音",
+      "prompt": "ハ・ニ・ホ・ヘ・ト・イ・ロの、変化させていない7つの基本の音を（　）という。",
+      "answer": "幹音",
+      "explanation": "♮で元の高さに戻した音も幹音です。",
+      "foreignTerms": [],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": null,
+      "sources": [
+        "ps-accidentals",
+        "rittor",
+        "senzoku-notes"
+      ],
+      "reviewNotes": [
+        "鍵盤色で定義しない。♮が付いた音だけが幹音ではない。洗足音名p.2／p.5で日本語名称と定義を確認。♮で戻した音の説明は定義と記号の取消機能からの編集上の補足。"
+      ],
+      "promptLines": [
+        "ハ・ニ・ホ・ヘ・ト・イ・ロの、",
+        "変化させていない7つの基本の音を（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-derived-note",
+      "topic": "派生音",
+      "prompt": "幹音を半音または全音、高く・低く変化させた音を（　）という。",
+      "answer": "派生音",
+      "explanation": "十二平均律では、ミ♯はファと同じ白鍵で弾いても派生音です。",
+      "foreignTerms": [],
+      "emphasis": [
+        "派生音"
+      ],
+      "conditions": [
+        "定量的な半音・全音、異名同音の同じ高さは十二平均律で説明。概念そのものを平均律に限定しない。"
+      ],
+      "supplement": null,
+      "sources": [
+        "ps-accidentals",
+        "rittor",
+        "fukui",
+        "senzoku-notes"
+      ],
+      "reviewNotes": [
+        "ミ♯は白鍵でも派生音。洗足音名p.2／p.5で日本語名称と定義を確認。♮で戻した音の説明は定義と記号の取消機能からの編集上の補足。"
+      ],
+      "promptLines": [
+        "幹音を半音または全音、",
+        "高く・低く変化させた音を（　）という。"
+      ]
+    },
+    {
+      "id": "interval-foundation-alteration-sign",
+      "topic": "変化記号",
+      "prompt": "♯・♭・♮・𝄪・𝄫をまとめて（　）という。",
+      "answer": "変化記号",
+      "explanation": "音の高さの変化や取り消しを示します。英語のaccidentalは臨時記号も指します。",
+      "foreignTerms": [
+        "accidental"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": "accidental は文脈によって「変化記号」「臨時記号」に対応します。日本語と英語は一対一の対応ではありません。",
+      "sources": [
+        "ps-accidentals",
+        "rittor",
+        "pronunciation",
+        "pron-accidental"
+      ],
+      "reviewNotes": [
+        "accidental markの臨時記号としての用法と、英語教材の5種のaccidentalsを区別して参照。"
+      ]
+    },
+    {
+      "id": "interval-foundation-accidental",
+      "topic": "臨時記号",
+      "prompt": "調号とは別に、音符の左側に付ける変化記号を（　）という。",
+      "answer": "臨時記号",
+      "explanation": "変化記号を臨時記号として使います。英語では、どちらもaccidentalと呼ぶ場合があります。",
+      "foreignTerms": [
+        "accidental"
+      ],
+      "emphasis": [],
+      "conditions": [],
+      "supplement": "accidental は文脈によって「変化記号」「臨時記号」に対応します。日本語と英語は一対一の対応ではありません。",
+      "sources": [
+        "ps-accidentals",
+        "rittor",
+        "pronunciation",
+        "pron-accidental"
+      ],
+      "reviewNotes": [
+        "accidental markの臨時記号としての用法と、英語教材の5種のaccidentalsを区別して参照。"
+      ],
+      "promptLines": [
+        "調号とは別に、",
+        "音符の左側に付ける変化記号を（　）という。"
+      ]
+    }
+  ]
+}

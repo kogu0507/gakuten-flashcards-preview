@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="長調の調号15枚・幹音同士の音程42枚に、調号画像→調名15枚と調名→調号30枚を追加。三か国語で確認できる無料の楽典フラッシュカード。スマホ対応・登録不要。">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Seegmund Music Labo">
+  <meta property="og:title" content="楽典フラッシュカード｜調号・音程を無料で反復練習">
+  <meta property="og:description" content="調号画像→調名15枚・調名→調号30枚と幹音同士の音程42枚を、必要な範囲で反復できる無料Webアプリ。調名は日本語・英語・ドイツ語で確認できます。">
+<meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="楽典フラッシュカード｜調号・音程を無料で反復練習">
+  <meta name="twitter:description" content="調号画像→調名15枚・調名→調号30枚と幹音同士の音程42枚を、必要な範囲で反復できる無料Webアプリ。調名は日本語・英語・ドイツ語で確認できます。">
+<title>開発プレビュー｜楽典フラッシュカード</title>
+
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./disclosure-ui.css">
+  <link rel="stylesheet" href="./content-renderer.css">
+  <link rel="stylesheet" href="./play-layout.css">
+</head>
+<body>
+  <main class="app-shell" id="app">
+    <header class="app-header">
+      <p class="eyebrow">開発プレビュー・未公開候補</p>
+      <h1>楽典フラッシュカード</h1>
+      <p class="lead">確認用の未公開候補です。本番とは別の画面です。</p><p><a href="./docs/code-notation-c-root-specimen.html">根音Cのコード表記を確認する</a></p>
+    </header>
+
+    <section class="screen start-screen" id="start-screen" aria-labelledby="start-title">
+      <div class="screen-heading">
+        <p class="screen-kicker">START</p>
+        <h2 id="start-title">今回のカードを作る</h2>
+        <p>カード棚から、今練習するものだけを手元に集めます。</p>
+      </div>
+
+      <section class="practice-set-panel" aria-labelledby="practice-set-title">
+        <div class="practice-set-heading">
+          <div>
+            <p class="panel-kicker">今回のカード</p>
+            <h3 id="practice-set-title"><span id="practice-count">0枚</span></h3>
+          </div>
+          <button type="button" id="clear-practice-button" class="text-button" hidden>全部棚へ戻す</button>
+        </div>
+
+        <p class="practice-origin" id="practice-origin" hidden></p>
+        <p class="practice-empty" id="practice-empty">今回のカードはまだありません。下のカード棚から追加してください。</p>
+        <div class="practice-groups" id="practice-groups" hidden></div>
+
+        <button type="button" id="start-practice-button" class="start-practice-button" disabled>カードを追加してください</button>
+      </section>
+
+      <section class="card-shelf" aria-labelledby="shelf-title">
+        <div class="shelf-heading">
+          <p class="panel-kicker">カード棚</p>
+          <h3 id="shelf-title">カードを追加する</h3>
+          <p>カード束・1枚ずつの選択で追加できます。範囲選択は、その単元のカードを入れ替えます。選択中のカードは「外す」で戻せます。</p>
+        </div>
+        <div class="shelf-list" id="shelf-list"></div>
+      </section>
+
+      <p class="status" id="start-status" aria-live="polite"></p>
+    </section>
+
+    <section class="screen play-screen" id="play-screen" aria-labelledby="source-title" hidden>
+      <section class="flashcard" id="flashcard" aria-labelledby="card-prompt">
+        <div class="card-meta">
+          <span id="progress">1 / 1</span>
+        </div>
+
+        <div class="card-stage">
+          <div class="prompt-wrap">
+            <p class="prompt" id="card-prompt"></p>
+          </div>
+
+          <div class="answer-wrap" id="answer-wrap">
+            <p class="answer" id="card-answer"></p>
+          </div>
+        </div>
+
+        <div class="card-primary-actions">
+          <button type="button" id="reveal-button" class="card-action">答えを見る</button>
+          <button type="button" id="next-button" class="card-action">次のカードへ</button>
+        </div>
+      </section>
+
+      <footer class="play-menu">
+        <div class="secondary-actions" aria-label="補助操作">
+          <button type="button" id="prev-button" class="secondary">前のカード</button>
+          <button type="button" id="shuffle-button" class="secondary">順番をシャッフル</button>
+          <button type="button" id="change-range-button" class="secondary">今回のカードを見直す</button>
+        </div>
+
+        <details id="related-key-range-note" hidden><summary>調号範囲外の表記について</summary><p>通常の調号は、♯または♭7個までです。この範囲を超える調では、重嬰・重変を含む臨時記号や、調号と臨時記号の組合せで表すことがあります。</p><p>図の「♯8相当」などは五度順の位置を示し、単純な♯8個の調号を意味しません。</p></details>
+        <details id="card-supplement" hidden><summary>用語・分類の補足</summary><p id="card-supplement-text"></p></details>
+        <p id="review-card-id" hidden></p>
+
+        <section class="source-info" aria-live="polite">
+          <h2 id="source-title">今回のカード</h2>
+          <p id="source-description"></p>
+        </section>
+
+        <p class="shortcut-hint">Space / Enter: 答えを見る・次のカードへ　← →: 前後移動</p>
+        <p class="status" id="play-status" aria-live="polite"></p>
+        <p class="play-brand">楽典フラッシュカード</p>
+      </footer>
+    </section>
+  </main>
+  <script type="module" src="./src/app.js"></script>
+  <script type="module" src="./src/disclosure-ui.js"></script>
+</body>
+</html>
+

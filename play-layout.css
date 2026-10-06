@@ -1,0 +1,169 @@
+/* Play behaves like a focused card player while Start remains a normal page. */
+body:has(#play-screen:not([hidden])) .app-header {
+  display: none;
+}
+
+body:has(#play-screen:not([hidden])) .app-shell {
+  width: min(920px, calc(100% - 24px));
+  padding: 12px 0 20px;
+}
+
+.play-screen {
+  height: calc(100dvh - 32px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.play-screen .flashcard {
+  flex: 0 0 auto;
+  height: clamp(420px, calc(100dvh - 210px), 640px);
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  align-content: stretch;
+  gap: clamp(18px, 3dvh, 30px);
+  overflow: hidden;
+}
+
+.play-screen .card-meta {
+  justify-content: flex-end;
+}
+
+.card-stage {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 3fr) minmax(0, 2fr);
+  gap: clamp(12px, 2.4dvh, 24px);
+}
+
+.prompt-wrap,
+.answer-wrap {
+  min-height: 0;
+  display: grid;
+  align-content: center;
+  overflow: auto;
+}
+
+.answer-wrap {
+  padding-top: clamp(12px, 2.4dvh, 24px);
+}
+
+/*
+ * Keep the answer region in the layout even before reveal. The global [hidden]
+ * rule still hides ordinary controls; this more-specific override reserves the
+ * answer slot while its children remain visually concealed.
+ */
+.answer-wrap[hidden] {
+  display: grid !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.answer-wrap[hidden] > * {
+  visibility: hidden;
+}
+
+.card-primary-actions {
+  min-height: 54px;
+}
+
+.card-primary-actions .card-action {
+  margin-top: 0;
+}
+
+.play-menu {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  overflow: auto;
+}
+
+.play-menu .secondary-actions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.play-menu .source-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 2px;
+}
+
+.play-menu .source-info h2 {
+  font-size: .95rem;
+}
+
+.play-menu .source-info p {
+  margin: 0;
+  font-size: .8rem;
+}
+
+.play-menu .shortcut-hint {
+  margin: 0;
+  font-size: .78rem;
+}
+
+.play-menu .status {
+  margin: 0;
+}
+
+.play-brand {
+  margin: 0;
+  color: #6b7280;
+  font-size: .72rem;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  body:has(#play-screen:not([hidden])) .app-shell {
+    width: min(100% - 16px, 920px);
+    padding-top: 8px;
+  }
+
+  .play-screen {
+    height: calc(100dvh - 20px);
+    gap: 8px;
+  }
+
+  .play-screen .flashcard {
+    height: clamp(390px, calc(100dvh - 205px), 560px);
+    padding: clamp(20px, 5vw, 32px);
+    gap: 18px;
+  }
+
+  .card-stage {
+    gap: 12px;
+  }
+
+  .play-menu .secondary-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .play-menu #change-range-button {
+    grid-column: 1 / -1;
+  }
+
+  .play-menu .source-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-height: 620px) {
+  .play-screen .flashcard {
+    height: clamp(320px, calc(100dvh - 170px), 410px);
+    gap: 14px;
+  }
+
+  .play-menu .shortcut-hint,
+  .play-brand {
+    display: none;
+  }
+}
