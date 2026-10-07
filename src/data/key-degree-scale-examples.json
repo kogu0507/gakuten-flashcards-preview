@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "gakuten-key-degree-scale-examples/v1",
+  "title": "調・各音の名称・他音階",
+  "sources": [
+    {
+      "id": "senzoku-keys",
+      "title": "洗足 調",
+      "url": "https://www.senzoku-online.jp/theory/classic/07/chou-01.html",
+      "status": "承認文案で確認済み"
+    },
+    {
+      "id": "degrees",
+      "title": "洗足 各音の名称",
+      "url": "https://www.senzoku-online.jp/theory/classic/06/onkai-08.html",
+      "status": "承認文案で確認済み"
+    },
+    {
+      "id": "ps-degrees",
+      "title": "Puget Sound Scale Degree Names",
+      "url": "https://musictheory.pugetsound.edu/mt21c/ScaleDegreeNames.html",
+      "status": "承認文案で確認済み"
+    },
+    {
+      "id": "lily-glossary",
+      "title": "LilyPond Music Glossary v2.26",
+      "url": "https://lilypond.org/doc/v2.26/Documentation/music-glossary.pdf",
+      "status": "承認文案で音級の意味・独語を確認"
+    },
+    {
+      "id": "pentatonic",
+      "title": "Ableton Pentatonik",
+      "url": "https://learningmusic.ableton.com/de/advanced-topics/pentatonic.html",
+      "status": "承認文案で確認済み"
+    },
+    {
+      "id": "whole-tone",
+      "title": "Ableton Ganzton",
+      "url": "https://learningmusic.ableton.com/de/advanced-topics/whole-tone.html",
+      "status": "承認文案で確認済み"
+    },
+    {
+      "id": "chromatic",
+      "title": "LilyPond chromatic scale",
+      "url": "https://lilypond.org/doc/v2.26/Documentation/music-glossary-big-page.html#chromatic-scale",
+      "status": "承認文案で確認済み"
+    }
+  ],
+  "cards": [
+    {
+      "id": "key-foundations-key",
+      "group": "key-foundations",
+      "topic": "調",
+      "prompt": "長調・短調の音楽で、主音と長短の別で定まる、ハ長調などの区分を（　）という。",
+      "answer": "調",
+      "explanation": "ハ長調とハ短調は、主音が同じでも異なる調です。",
+      "concept": "key",
+      "sources": [
+        "senzoku-keys",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "key-foundations-tonality",
+      "group": "key-foundations",
+      "topic": "調性",
+      "prompt": "長調・短調の音楽で、主音を中心に音どうしの関係が組織される性質を（　）という。",
+      "answer": "調性",
+      "explanation": "音の並びだけでなく、中心となる音との関係を捉えます。",
+      "concept": "tonality",
+      "sources": [
+        "senzoku-keys",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "key-foundations-root-g",
+      "group": "key-foundations",
+      "topic": "ト",
+      "prompt": "ハ長調で、ト・ロ・ニを構成音とする三和音の根音は（　）である。",
+      "answer": "ト",
+      "explanation": "調の主音はハ、ここで扱う和音の根音はトです。",
+      "concept": "note-g",
+      "sources": [
+        "senzoku-keys",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-supertonic",
+      "group": "scale-degree-names",
+      "topic": "上主音",
+      "prompt": "長音階・短音階の第II音を（　）という。",
+      "answer": "上主音",
+      "explanation": "主音のすぐ上の音階構成音です。",
+      "concept": "supertonic",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-mediant",
+      "group": "scale-degree-names",
+      "topic": "中音（上中音）",
+      "prompt": "長音階・短音階の第III音を（　）という。",
+      "answer": "中音（上中音）",
+      "explanation": "主音から音階上で3度上に位置します。",
+      "concept": "mediant",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-subdominant",
+      "group": "scale-degree-names",
+      "topic": "下属音",
+      "prompt": "長音階・短音階の第IV音を（　）という。",
+      "answer": "下属音",
+      "explanation": "主音の完全5度下と同じ音名です。",
+      "concept": "subdominant",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-dominant",
+      "group": "scale-degree-names",
+      "topic": "属音",
+      "prompt": "長音階・短音階の第V音を（　）という。",
+      "answer": "属音",
+      "explanation": "主音から完全5度上に位置します。",
+      "concept": "dominant",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-submediant",
+      "group": "scale-degree-names",
+      "topic": "下中音",
+      "prompt": "長音階・短音階の第VI音を（　）という。",
+      "answer": "下中音",
+      "explanation": "上の主音I（上）から、音階上で3度下に位置します。",
+      "concept": "submediant",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-degree-names-leading-tone",
+      "group": "scale-degree-names",
+      "topic": "導音",
+      "prompt": "長音階の第VII音で、上の主音の半音下にある音を（　）という。",
+      "answer": "導音",
+      "explanation": "自然短音階の第VII音は主音へ全音なので、導音とは呼びません。",
+      "concept": "leading-tone",
+      "sources": [
+        "degrees",
+        "ps-degrees",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-examples-pentatonic",
+      "group": "scale-examples",
+      "topic": "五音音階",
+      "prompt": "1オクターブ内の異なる音が5つでできた音階を（　）という。",
+      "answer": "五音音階",
+      "explanation": "半音を含むものも含まないものもあり、さまざまな形があります。",
+      "concept": "pentatonic",
+      "sources": [
+        "pentatonic",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-examples-whole-tone",
+      "group": "scale-examples",
+      "topic": "全音音階",
+      "prompt": "1オクターブを、隣り合う音の間隔がすべて全音になるように分けた音階を（　）という。",
+      "answer": "全音音階",
+      "explanation": "1オクターブ内の異なる音は6つです。",
+      "concept": "whole-tone",
+      "sources": [
+        "whole-tone",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    },
+    {
+      "id": "scale-examples-chromatic",
+      "group": "scale-examples",
+      "topic": "半音階",
+      "prompt": "十二平均律で、1オクターブを半音ずつに分けた音階を（　）という。",
+      "answer": "半音階",
+      "explanation": "1オクターブ内の12音を用います。",
+      "concept": "chromatic",
+      "sources": [
+        "chromatic",
+        "lily-glossary"
+      ],
+      "reviewNotes": [
+        "2026-10-07ユーザー承認の12文案をそのまま採用。読みは編集上の近似で人間校閲待ち。"
+      ]
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {keyFoundationIds,scaleDegreeNameIds,scaleExampleIds,keyDegreeScaleExampleIds} from './key-degree-scale-examples-meta.js';
 import { foundationCardIds } from './interval-foundations-meta.js';
 import { triadPilotCardIds,triadCodeCardIds } from './triad-identification-meta.js';
 import {naturalTriadQualityIds,naturalTriadCodeIds,allNaturalTriadCardIds} from './triad-natural-roots-meta.js';
@@ -39,6 +40,11 @@ const signatureRanges = [
 ];
 
 export const presets = [
+  {id:'key-foundations-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['key-foundations'],cardIds:[...keyFoundationIds]},
+  {id:'scale-degree-names-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['scale-degree-names'],cardIds:[...scaleDegreeNameIds]},
+  {id:'scale-examples-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['scale-examples'],cardIds:[...scaleExampleIds]},
+  {id:'key-degree-scale-examples-all',title:'調・各音・他音階12枚',description:'確認用の混合集合',collectionIds:['key-foundations','scale-degree-names','scale-examples'],cardIds:[...keyDegreeScaleExampleIds],shelfVisible:false},
+
   {id:'scale-foundations-all',title:'全範囲',description:'音階の基礎知識7枚',collectionIds:['scale-foundations'],cardIds:[...scaleFoundationIds]},
   {id:'chord-foundations-all',title:'全範囲',description:'和音の基礎知識6枚',collectionIds:['chord-foundations'],cardIds:[...chordFoundationIds]},
   {id:'scale-chord-foundations-all',title:'音階・和音の基礎知識13枚',description:'確認用の混合集合',collectionIds:['scale-foundations','chord-foundations'],cardIds:[...scaleFoundationIds,...chordFoundationIds],shelfVisible:false},

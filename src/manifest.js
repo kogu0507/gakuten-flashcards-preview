@@ -1,3 +1,4 @@
+import {keyFoundationIds,scaleDegreeNameIds,scaleExampleIds,keyDegreeScaleExampleIds} from './key-degree-scale-examples-meta.js';
 import { foundationCardIds } from './interval-foundations-meta.js';
 import { allNaturalTriadCardIds } from './triad-natural-roots-meta.js';
 import {allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
@@ -59,6 +60,9 @@ export const collectionManifest = [
   {id:'seventh-chord-identification',title:'七の和音（基本形）',description:'根音C・D・E・F・G・A・Bの42譜例。種類42枚とコード42枚は別問題で、同じSVGを共有します。',cardCount:84,modulePath:'./collections/seventh-chord-identification.js',cardIds:allNaturalSeventhCardIds},
   {id:'scale-foundations',title:'音階の基礎知識',description:'音階・主音・短音階の形を穴埋めで確認する7枚。用語の答えは三言語と読み付き。',cardCount:7,modulePath:'./collections/scale-foundations.js',cardIds:scaleFoundationIds},
   {id:'chord-foundations',title:'和音の基礎知識',description:'和音・根音・基本形と転回形を穴埋めで確認する6枚。用語の答えは三言語と読み付き。',cardCount:6,modulePath:'./collections/chord-foundations.js',cardIds:chordFoundationIds},
+  {id:'key-foundations',title:'調の基礎知識',description:'穴埋めと三言語・小解説で確認する3枚。',cardCount:3,modulePath:'./collections/key-foundations.js',cardIds:keyFoundationIds},
+  {id:'scale-degree-names',title:'音階の各音の名称',description:'穴埋めと三言語・小解説で確認する6枚。',cardCount:6,modulePath:'./collections/scale-degree-names.js',cardIds:scaleDegreeNameIds},
+  {id:'scale-examples',title:'他の音階',description:'穴埋めと三言語・小解説で確認する3枚。',cardCount:3,modulePath:'./collections/scale-examples.js',cardIds:scaleExampleIds},
 ];
 
 const collectionMap = new Map(collectionManifest.map((item) => [item.id, item]));

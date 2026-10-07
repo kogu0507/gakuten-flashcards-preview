@@ -1,8 +1,8 @@
 // Shelf taxonomy only: manifest ownership and practice/session order stay separate.
 export const shelfGroups = [
   { id: 'intervals', title: '音程', collectionIds: ['interval-foundations', 'natural-note-intervals', 'interval-inversions'] },
-  { id: 'keys', title: '調・調号', collectionIds: ['key-signature-images', 'key-signature-writing', 'key-relationships'] },
-  { id: 'scales', title: '音階', collectionIds: ['scale-foundations','scale-writing'] },
+  { id: 'keys', title: '調・調号', collectionIds: ['key-foundations','key-signature-images', 'key-signature-writing', 'key-relationships'] },
+  { id: 'scales', title: '音階', collectionIds: ['scale-foundations','scale-degree-names','scale-examples','scale-writing'] },
   { id:'chords',title:'和音',collectionIds:['chord-foundations','triad-identification','seventh-chord-identification'] }
 ];
 
