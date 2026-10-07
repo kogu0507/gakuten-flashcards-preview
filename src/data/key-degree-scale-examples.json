@@ -185,7 +185,7 @@
       "topic": "導音",
       "prompt": "長音階の第VII音で、上の主音の半音下にある音を（　）という。",
       "answer": "導音",
-      "explanation": "自然短音階の第VII音は主音へ全音なので、導音とは呼びません。",
+      "explanation": "自然短音階の第VII音と、上の主音との間は全音なので、導音とは呼びません。",
       "concept": "leading-tone",
       "sources": [
         "degrees",
