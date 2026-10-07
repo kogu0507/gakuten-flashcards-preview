@@ -1,15 +1,15 @@
 import {keyFoundationIds,scaleDegreeNameIds,scaleExampleIds,keyDegreeScaleExampleIds} from './key-degree-scale-examples-meta.js';
 import { foundationCardIds } from './interval-foundations-meta.js';
 import { triadPilotCardIds,triadCodeCardIds } from './triad-identification-meta.js';
-import {naturalTriadQualityIds,naturalTriadCodeIds,allNaturalTriadCardIds} from './triad-natural-roots-meta.js';
+import {naturalTriadTargets,naturalTriadQualityIds,naturalTriadCodeIds,allNaturalTriadCardIds} from './triad-natural-roots-meta.js';
 import {seventhQualityIds,seventhCodeIds} from './seventh-chord-meta.js';
-import {naturalSeventhQualityIds,naturalSeventhCodeIds,allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
-import { relatedKeyCardIds } from './key-relationships-meta.js';
+import {naturalSeventhTargets,naturalSeventhQualityIds,naturalSeventhCodeIds,allNaturalSeventhCardIds} from './seventh-natural-roots-meta.js';
+import { relatedKeyCardId, relatedKeyCardIds } from './key-relationships-meta.js';
 import { keySignatureIds } from "./key-signature-meta.js";
 import {scaleFoundationIds,chordFoundationIds} from './scale-chord-foundations-meta.js';
-import { scaleTypes, scaleAnswerModes, scaleSelectionCardIds } from "./scale-writing-meta.js";
+import { scaleCardId, scaleTypes, scaleAnswerModes, scaleSelectionCardIds } from "./scale-writing-meta.js";
 import { inversionCardIds, inversionDegreeCardIds, inversionQualityCardIds, inversionRuleCardIds, inversionAppliedCardIds } from "./interval-inversion-meta.js";
-import { getCollectionMeta } from "./manifest.js";
+import { collectionIdsForCardIds, getCollectionMeta } from "./manifest.js";
 import {
   naturalIntervalCardIds,
   naturalIntervalCardIdsForNumber
@@ -39,15 +39,35 @@ const signatureRanges = [
   { suffix: "flat-all", title: "♭系すべて", kind: "f", max: 7 }
 ];
 
+// Explicit accepted roots and qualities prevent future taxonomy additions from
+// silently changing these published review-set memberships.
+const reviewRoots = new Set(['C','D','G']);
+const reviewTriads = naturalTriadTargets.filter(t => reviewRoots.has(t.root) && ['major','minor','diminished','augmented'].includes(t.quality));
+const reviewSevenths = naturalSeventhTargets.filter(t => reviewRoots.has(t.root) && ['diminished','half-diminished','minor','dominant','major','augmented-major'].includes(t.quality));
+const reviewPreset = (id,title,description,shelfCollectionId,cardIds) => ({id,title,description,shelfCollectionId,cardIds,collectionIds:collectionIdsForCardIds(cardIds),separatorBefore:true});
+const signatureReviewIds = ['0','1s','2s','3s','1f','2f','3f'].map(id => `key-image-${id}`);
 export const presets = [
   {id:'key-foundations-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['key-foundations'],cardIds:[...keyFoundationIds]},
   {id:'scale-degree-names-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['scale-degree-names'],cardIds:[...scaleDegreeNameIds]},
   {id:'scale-examples-all',title:'全範囲',description:'三言語と読み付きの基礎知識',collectionIds:['scale-examples'],cardIds:[...scaleExampleIds]},
   {id:'key-degree-scale-examples-all',title:'調・各音・他音階12枚',description:'確認用の混合集合',collectionIds:['key-foundations','scale-degree-names','scale-examples'],cardIds:[...keyDegreeScaleExampleIds],shelfVisible:false},
+  reviewPreset('study-key-signature-relatives','調と調号の復習','知識10枚＋調号7枚＋近親調6枚。混合復習・出題順の指定なし','key-foundations',[
+    ...keyFoundationIds,...scaleDegreeNameIds,'scale-foundation-tonic',...signatureReviewIds,
+    ...['major','minor'].flatMap(mode => ['0','1s','1f'].map(id => relatedKeyCardId(mode,id)))
+  ]),
 
   {id:'scale-foundations-all',title:'全範囲',description:'音階の基礎知識7枚',collectionIds:['scale-foundations'],cardIds:[...scaleFoundationIds]},
   {id:'chord-foundations-all',title:'全範囲',description:'和音の基礎知識6枚',collectionIds:['chord-foundations'],cardIds:[...chordFoundationIds]},
   {id:'scale-chord-foundations-all',title:'音階・和音の基礎知識13枚',description:'確認用の混合集合',collectionIds:['scale-foundations','chord-foundations'],cardIds:[...scaleFoundationIds,...chordFoundationIds],shelfVisible:false},
+  reviewPreset('study-scale-basics','音階の形と各音','知識13枚＋紙に書く音階4枚。混合復習・出題順の指定なし','scale-foundations',[
+    ...scaleFoundationIds,...scaleDegreeNameIds,...['major','natural-minor','harmonic-minor','melodic-minor'].map(type => scaleCardId(type,'0','key-signature'))
+  ]),
+  reviewPreset('study-chord-quality-cdg','和音の種類を見分ける','基礎6枚＋C・D・G根音の種類30枚。混合復習・出題順の指定なし','chord-foundations',[
+    ...chordFoundationIds,...reviewTriads.map(t=>t.id),...reviewSevenths.map(t=>t.id)
+  ]),
+  reviewPreset('study-chord-code-cdg','コードネームを読む','基礎6枚＋C・D・G根音のコード30枚。混合復習・出題順の指定なし','chord-foundations',[
+    ...chordFoundationIds,...reviewTriads.map(t=>t.codeId),...reviewSevenths.map(t=>t.codeId)
+  ]),
   {id:'triad-identification-pilot',title:'三和音の種類 4枚（試作）',description:'長・短・減・増、根音ハの基本形',collectionIds:['triad-identification'],cardIds:[...triadPilotCardIds],shelfVisible:false},
   {id:'triad-code-pilot',title:'コードネーム 4枚（試作）',description:'同じ4譜例のコードネームだけを答える',collectionIds:['triad-identification'],cardIds:[...triadCodeCardIds],shelfVisible:false},
   {id:'chord-all',title:'全範囲',description:'三和音56枚＋七の和音84枚。種類問題とコード問題',collectionIds:['triad-identification','seventh-chord-identification'],shelfCollectionId:'triad-identification',cardIds:[...allNaturalTriadCardIds,...allNaturalSeventhCardIds]},
