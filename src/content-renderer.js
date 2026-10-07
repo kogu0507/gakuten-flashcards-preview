@@ -543,7 +543,14 @@ function createConceptRecall(block) {
   for(const [key,label,lang] of [['jp','日本語','ja'],['en','English','en'],['de','Deutsch','de']]) {
     const row=document.createElement('tr'),heading=textElement('th',label),cell=textElement('td','');
     heading.setAttribute('scope','row'); heading.setAttribute('lang',lang);cell.setAttribute('lang',lang);
-    if(key==='jp')cell.textContent=term.jp;
+    if(key==='jp') {
+      if(term.jpReading) {
+        cell.className='concept-term-with-reading';cell.setAttribute('aria-label',term.jpReading);
+        const ruby=document.createElement('ruby');
+        const reading=textElement('rt',term.jpReading);reading.setAttribute('lang','ja');
+        ruby.append(textElement('span',term.jp),textElement('rp','（'),reading,textElement('rp','）'));cell.append(ruby);
+      } else cell.textContent=term.jp;
+    }
     else {
       const readings=term[key+'Reading'],words=readings.length===1?[term[key]]:term[key].split(' ');
       cell.setAttribute('aria-label',term[key]);
@@ -551,7 +558,8 @@ function createConceptRecall(block) {
         if(index)cell.append(textElement('span',' '));
         const ruby=document.createElement('ruby'),value=block.concept==='seventh'&&key==='en'&&index===0?textElement('abbr','7th'):textElement('span',word);
         if(value.tagName==='ABBR')value.setAttribute('title','seventh');
-        ruby.append(value,textElement('rp','（'),textElement('rt',readings[index]),textElement('rp','）'));cell.append(ruby);
+        const reading=textElement('rt',readings[index]);reading.setAttribute('lang','ja');
+        ruby.append(value,textElement('rp','（'),reading,textElement('rp','）'));cell.append(ruby);
       });
     }
     row.append(heading,cell);body.append(row);

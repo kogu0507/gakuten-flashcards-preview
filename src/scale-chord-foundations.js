@@ -22,7 +22,7 @@ export function validateScaleChordFoundations(data) {
     ids.add(card.id);
     for(const [key,max] of [['topic',50],['prompt',120],['answer',30],['explanation',100]])safeText(card[key],max);
     if(card.concept!==null && scaleChordConcept(card.concept).jp!==card.answer)throw new TypeError('Concept answer mismatch');
-    if(card.concept===null&&!['VII–VIII','V–VI','VII'].includes(card.answer))throw new TypeError('Unsupported numeral answer');
+    if(card.concept===null&&!['VII–I（上）','V–VI','VII'].includes(card.answer))throw new TypeError('Unsupported numeral answer');
     if(!Array.isArray(card.sources)||!card.sources.length||card.sources.some(id=>!sources.has(id)))throw new TypeError('Unknown source');
     if(!Array.isArray(card.reviewNotes)||card.reviewNotes.length>6)throw new TypeError('Invalid review notes');
     card.reviewNotes.forEach(note=>safeText(note,300));

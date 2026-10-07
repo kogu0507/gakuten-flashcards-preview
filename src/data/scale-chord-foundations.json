@@ -37,6 +37,36 @@
       "title": "Ableton Septakkorde",
       "url": "https://learningmusic.ableton.com/de/advanced-topics/seventh-chords.html",
       "status": "既存七の和音SSOTで確認済み"
+    },
+    {
+      "id": "senzoku-degrees",
+      "title": "洗足 音階での各音の名称",
+      "url": "https://www.senzoku-online.jp/theory/classic/06/onkai-08.html",
+      "status": "2026-10-07本文を再取得確認"
+    },
+    {
+      "id": "senzoku-melodic",
+      "title": "洗足 旋律短音階",
+      "url": "https://www.senzoku-online.jp/theory/classic/06/onkai-07.html",
+      "status": "2026-10-07本文を再取得確認"
+    },
+    {
+      "id": "senzoku-seventh",
+      "title": "洗足 四和音（七の和音）",
+      "url": "https://www.senzoku-online.jp/theory/classic/08/waon-04.html",
+      "status": "2026-10-07本文を再取得確認"
+    },
+    {
+      "id": "senzoku-inversions",
+      "title": "洗足 和音の転回",
+      "url": "https://www.senzoku-online.jp/theory/classic/08/waon-07.html",
+      "status": "2026-10-07本文を再取得確認"
+    },
+    {
+      "id": "mt-inversions",
+      "title": "musictheory.net Triad Inversion",
+      "url": "https://www.musictheory.net/lessons/42",
+      "status": "2026-10-07bass noteと根音の区別を確認"
     }
   ],
   "cards": [
@@ -45,7 +75,7 @@
       "topic": "音階",
       "prompt": "音を一定の音程の並びに従って、高さの順に並べた音列を（　）という。",
       "answer": "音階",
-      "explanation": "長音階・短音階のほか、五音音階などもあります。",
+      "explanation": "音階にはさまざまな種類があります。このセットでは長音階・短音階を扱います。",
       "concept": "scale",
       "sources": [
         "senzoku-scales",
@@ -53,7 +83,7 @@
         "lehr-minor"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
       ]
     },
     {
@@ -69,36 +99,40 @@
         "lehr-minor"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
       ]
     },
     {
       "id": "scale-foundation-major-half-steps",
       "topic": "長音階",
-      "prompt": "長音階で、隣り合う音が半音になるのは第III–IV音間と第（　）音間である。",
-      "answer": "VII–VIII",
-      "explanation": "主音を第I音、1オクターブ上を第VIII音と数えます。ほかは全音です。",
+      "prompt": "長音階では、第III–IV音間と第（　）音間が半音で、ほかの隣り合う音の間隔は全音になる。",
+      "answer": "VII–I（上）",
+      "explanation": "III＝中音（上中音）、IV＝下属音、VII＝導音。I（上）は1オクターブ上の主音です。",
       "concept": null,
       "sources": [
         "senzoku-scales",
-        "ps-scales",
-        "lehr-minor"
+        "senzoku-degrees",
+        "ps-scales"
       ],
-      "reviewNotes": []
+      "reviewNotes": [
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
+      ]
     },
     {
       "id": "scale-foundation-natural-minor-half-steps",
       "topic": "自然短音階",
-      "prompt": "自然短音階で、隣り合う音が半音になるのは第II–III音間と第（　）音間である。",
+      "prompt": "自然短音階では、第II–III音間と第（　）音間が半音で、ほかの隣り合う音の間隔は全音になる。",
       "answer": "V–VI",
-      "explanation": "主音を第I音、1オクターブ上を第VIII音として確認します。",
+      "explanation": "II＝上主音、III＝中音（上中音）、V＝属音、VI＝下中音です。",
       "concept": null,
       "sources": [
         "senzoku-scales",
-        "ps-scales",
-        "lehr-minor"
+        "senzoku-degrees",
+        "ps-scales"
       ],
-      "reviewNotes": []
+      "reviewNotes": [
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
+      ]
     },
     {
       "id": "scale-foundation-harmonic-minor-seventh",
@@ -119,15 +153,15 @@
       "topic": "旋律的短音階・上行",
       "prompt": "伝統的な旋律的短音階の上行形では、自然短音階の第VI・第VII音を（　）高める。",
       "answer": "半音",
-      "explanation": "同じ主音の自然短音階と比べます。下行形は別カードで確認します。",
+      "explanation": "同じ主音の自然短音階と比べます。下行では第VI・第VII音を戻し、自然短音階と同じ音の並びになります。",
       "concept": "half",
       "sources": [
-        "senzoku-scales",
+        "senzoku-melodic",
         "ps-scales",
         "lehr-minor"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
       ]
     },
     {
@@ -143,7 +177,7 @@
         "lehr-minor"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
       ]
     },
     {
@@ -151,31 +185,32 @@
       "topic": "和音",
       "prompt": "高さの違う複数の音を同時に響かせたまとまりを（　）という。",
       "answer": "和音",
-      "explanation": "このセットでは、主に三和音・七の和音を扱います。",
+      "explanation": "このセットでは、主に三和音・七の和音（四和音）を扱います。",
       "concept": "chord",
       "sources": [
         "senzoku-chords",
-        "ableton-inversions",
+        "senzoku-seventh",
         "ableton-seventh"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
       ]
     },
     {
       "id": "chord-foundation-root",
       "topic": "根音",
-      "prompt": "三和音・七の和音を3度ずつ積み重ねて表したとき、土台になる音を（　）という。",
+      "prompt": "三和音・七の和音を基本形にして3度ずつ積み重ねたとき、土台になる音を（　）という。",
       "answer": "根音",
-      "explanation": "実際に鳴る最低音と、根音が同じとは限りません。",
+      "explanation": "実際に鳴る最低音（バス／ベース）と、根音が同じとは限りません。",
       "concept": "root",
       "sources": [
         "senzoku-chords",
+        "senzoku-inversions",
         "ableton-inversions",
-        "ableton-seventh"
+        "mt-inversions"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
       ]
     },
     {
@@ -191,7 +226,7 @@
         "ableton-seventh"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
       ]
     },
     {
@@ -199,15 +234,14 @@
       "topic": "七の和音",
       "prompt": "根音から第7音まで、3度ずつ重ねてできる和音を（　）という。",
       "answer": "七の和音",
-      "explanation": "根音・第3音・第5音・第7音からなる四和音です。",
+      "explanation": "根音・第3・第5・第7音からなり、四和音とも呼ばれます。",
       "concept": "seventh",
       "sources": [
-        "senzoku-chords",
-        "ableton-inversions",
+        "senzoku-seventh",
         "ableton-seventh"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "2026-10-07ユーザー校閲案を一次教材で検討して更新。原承認文案は履歴として保持。"
       ]
     },
     {
@@ -223,7 +257,7 @@
         "ableton-seventh"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
       ]
     },
     {
@@ -239,7 +273,7 @@
         "ableton-seventh"
       ],
       "reviewNotes": [
-        "問題・答え・小解説は承認文案と同文。原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
+        "原語のカナは発音を簡略化した編集上の近似で人間校閲待ち。"
       ]
     }
   ]

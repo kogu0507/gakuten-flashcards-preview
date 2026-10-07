@@ -9,7 +9,7 @@ export const scaleChordConcepts = Object.freeze({
   chord: { jp:'和音', en:'chord', enReading:['コード'], de:'Akkord', deReading:['アコルト'] },
   root: { jp:'根音', en:'root', enReading:['ルート'], de:'Grundton', deReading:['グルントトーン'] },
   triad: { jp:'三和音', en:'triad', enReading:['トライアド'], de:'Dreiklang', deReading:['ドライクラング'] },
-  seventh: { jp:'七の和音', en:'seventh chord', enReading:['セヴンス','コード'], de:'Septakkord', deReading:['ゼプトアコルト'] },
+  seventh: { jp:'七の和音', jpReading:'しちのわおん', en:'seventh chord', enReading:['セヴンス','コード'], de:'Septakkord', deReading:['ゼプトアコルト'] },
   'root-position': { jp:'基本形', en:'root position', enReading:['ルート','ポジション'], de:'Grundstellung', deReading:['グルントシュテルング'] },
   inversion: { jp:'転回形', en:intervalConcepts.inversion.en, enReading:[intervalConcepts.inversion.enReading], de:'Umkehrung', deReading:['ウムケールング'] }
 });
